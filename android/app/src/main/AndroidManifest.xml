@@ -1,7 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="com.example.projet_box">
    <application
         android:label="projet_box"
+=======
+    package="com.example.box">
+   <application
+        android:label="Box"
+>>>>>>> 58e92c3b1ba6db4fe09df012cb460a4e0f111b78
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

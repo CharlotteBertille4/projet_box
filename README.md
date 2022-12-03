@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # projet_box
 
 A new Flutter project.
@@ -19,3 +20,14 @@ Projet d'épargne en ligne
 
 -Juste après avoir cloné le projet, passer à la compilation du projet
 -Assurez vous d'avoir l'écran de flutter demo home page:
+=======
+# BOX FLUTTER APP
+
+BOX est une application d'epargne en ligne, simple, portable, sécurisée et accessible
+
+## TRAVAUX EFFECTUES
+
+[] Intégration des interfaces d’inscription et de connexion (7 écrans)
+[] Préparation aux requettes d'inscription et de connexion
+
+>>>>>>> 58e92c3b1ba6db4fe09df012cb460a4e0f111b78

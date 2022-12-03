@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "projet_box",
     "short_name": "projet_box",
+=======
+    "name": "box",
+    "short_name": "box",
+>>>>>>> 58e92c3b1ba6db4fe09df012cb460a4e0f111b78
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

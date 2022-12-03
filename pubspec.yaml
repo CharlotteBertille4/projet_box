@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 name: projet_box
 description: A new Flutter project.
+=======
+name: box
+description: Une appication d'epargne electronique.
+>>>>>>> 58e92c3b1ba6db4fe09df012cb460a4e0f111b78
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
+<<<<<<< HEAD
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
 # followed by an optional build number separated by a +.
@@ -55,10 +61,38 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
 
+=======
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.0-396.0.dev <3.0.0'
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  form_validator: ^1.0.4
+  google_fonts: ^3.0.1
+  intl: ^0.17.0
+  intl_phone_field: ^3.1.0
+  pixel_perfect: ^1.1.1
+  provider: ^6.0.4
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+# The following section is specific to Flutter packages.
+flutter:
+>>>>>>> 58e92c3b1ba6db4fe09df012cb460a4e0f111b78
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+<<<<<<< HEAD
 
   # To add assets to your application, add an assets section, like this:
   assets:
@@ -71,6 +105,16 @@ flutter:
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
 
+=======
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/design/
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+>>>>>>> 58e92c3b1ba6db4fe09df012cb460a4e0f111b78
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
