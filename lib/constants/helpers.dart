@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:form_validator/form_validator.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:form_validator/form_validator.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // Creating my custom material color
 
