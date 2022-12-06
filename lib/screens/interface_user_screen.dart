@@ -16,7 +16,21 @@ class _InterfaceUserScreenState extends State<InterfaceUserScreen> {
     final sizeX = MediaQuery.of(context).size.width;
     return Scaffold(
       // backgroundColor: const Color(0xFF07051C),
-      drawer: const Drawer(),
+      drawer: Drawer(
+          child: ListView(
+        children: [
+          ListTile(
+            title: const Text('Menu'),
+            onTap: () {
+              Navigator.pushNamed(context, 'route_menu');
+            },
+          ),
+          ListTile(
+            title: const Text('Profil'),
+            onTap: () {},
+          ),
+        ],
+      )),
       appBar: AppBar(
         backgroundColor: Colors.orangeAccent,
         title: const Padding(

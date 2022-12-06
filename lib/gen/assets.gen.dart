@@ -2,27 +2,78 @@
 /// *****************************************************
 ///  FlutterGen
 /// *****************************************************
+
+// coverage:ignore-file
+// ignore_for_file: type=lint
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
+
 import 'package:flutter/widgets.dart';
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/ellipse 2.png
-  AssetGenImage get ellipse2 =>
-      const AssetGenImage('assets/images/ellipse 2.png');
+  /// File path: assets/images/a_propos.png
+  AssetGenImage get aPropos =>
+      const AssetGenImage('assets/images/a_propos.png');
+
+  /// File path: assets/images/ajout_caisse.png
+  AssetGenImage get ajoutCaisse =>
+      const AssetGenImage('assets/images/ajout_caisse.png');
+
+  /// File path: assets/images/annuler_caisse.png
+  AssetGenImage get annulerCaisse =>
+      const AssetGenImage('assets/images/annuler_caisse.png');
+
+  /// File path: assets/images/cadeau.png
+  AssetGenImage get cadeau => const AssetGenImage('assets/images/cadeau.png');
 
   /// File path: assets/images/cadenas.png
   AssetGenImage get cadenas => const AssetGenImage('assets/images/cadenas.png');
+
+  /// File path: assets/images/commercial.png
+  AssetGenImage get commercial =>
+      const AssetGenImage('assets/images/commercial.png');
+
+  /// File path: assets/images/contatc.png
+  AssetGenImage get contatc => const AssetGenImage('assets/images/contatc.png');
+
+  /// File path: assets/images/croix.png
+  AssetGenImage get croix => const AssetGenImage('assets/images/croix.png');
+
+  /// File path: assets/images/ellipse 2.png
+  AssetGenImage get ellipse2 =>
+      const AssetGenImage('assets/images/ellipse 2.png');
 
   /// File path: assets/images/icon_horloge.png
   AssetGenImage get iconHorloge =>
       const AssetGenImage('assets/images/icon_horloge.png');
 
+  /// File path: assets/images/image_robinet.png
+  AssetGenImage get imageRobinet =>
+      const AssetGenImage('assets/images/image_robinet.png');
+
   /// File path: assets/images/oeuf.png
   AssetGenImage get oeuf => const AssetGenImage('assets/images/oeuf.png');
 
+  /// File path: assets/images/partage.png
+  AssetGenImage get partage => const AssetGenImage('assets/images/partage.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [ellipse2, cadenas, iconHorloge, oeuf];
+  List<AssetGenImage> get values => [
+        aPropos,
+        ajoutCaisse,
+        annulerCaisse,
+        cadeau,
+        cadenas,
+        commercial,
+        contatc,
+        croix,
+        ellipse2,
+        iconHorloge,
+        imageRobinet,
+        oeuf,
+        partage
+      ];
 }
 
 class Assets {
