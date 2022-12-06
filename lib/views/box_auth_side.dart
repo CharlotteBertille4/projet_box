@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:box/views/box_login.dart';
-import 'package:box/constants/helpers.dart';
-import 'package:box/views/box_register.dart';
+import 'package:projet_box/constants/helpers.dart';
+import 'package:projet_box/views/box_login.dart';
+import 'package:projet_box/views/box_register.dart';
 
 class BoxAuthSide extends StatelessWidget {
   const BoxAuthSide({super.key});
@@ -67,7 +67,7 @@ class BoxAuthSide extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size.fromHeight(65),
-                      backgroundColor: boxGoldenPrimary,
+                      //backgroundColor: boxGoldenPrimary,
                       padding: const EdgeInsets.symmetric(vertical: 19),
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
@@ -101,7 +101,7 @@ class BoxAuthSide extends StatelessWidget {
                           bottomRight: Radius.circular(15),
                         ),
                       ),
-                      backgroundColor: boxdarknessBlack,
+                      // backgroundColor: boxdarknessBlack,
                       padding: const EdgeInsets.symmetric(vertical: 19),
                     ),
                     child: Text(

@@ -1,6 +1,6 @@
-import 'package:box/constants/helpers.dart';
-import 'package:box/views/box_auth_side.dart';
 import 'package:flutter/material.dart';
+import 'package:projet_box/constants/helpers.dart';
+import 'package:projet_box/views/box_auth_side.dart';
 
 void main() {
   runApp(const ProjetBox());

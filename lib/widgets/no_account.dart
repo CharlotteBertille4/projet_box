@@ -1,7 +1,7 @@
-import 'package:box/constants/helpers.dart';
-import 'package:box/views/box_login.dart';
-import 'package:box/views/box_register.dart';
 import 'package:flutter/material.dart';
+import 'package:projet_box/constants/helpers.dart';
+import 'package:projet_box/views/box_login.dart';
+import 'package:projet_box/views/box_register.dart';
 
 class NoAccount extends StatelessWidget {
   const NoAccount({

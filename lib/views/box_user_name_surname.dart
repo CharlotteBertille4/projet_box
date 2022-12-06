@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:box/constants/helpers.dart';
-import 'package:box/widgets/no_account.dart';
-import 'package:box/widgets/dot_indicator.dart';
+import 'package:projet_box/constants/helpers.dart';
+import 'package:projet_box/widgets/dot_indicator.dart';
+import 'package:projet_box/widgets/no_account.dart';
 
 class BoxUserNameSurname extends StatelessWidget {
   const BoxUserNameSurname({

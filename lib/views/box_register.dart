@@ -1,10 +1,11 @@
-import 'package:box/constants/helpers.dart';
-import 'package:box/views/box_number_job.dart';
-import 'package:box/views/box_sex_birthday.dart';
-import 'package:box/views/box_user_name_surname.dart';
-import 'package:box/views/box_user_password.dart';
-import 'package:box/widgets/box_custom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:projet_box/constants/helpers.dart';
+import 'package:projet_box/views/box_number_job.dart';
+import 'package:projet_box/views/box_sex_birthday.dart';
+import 'package:projet_box/views/box_user_name_surname.dart';
+import 'package:projet_box/views/box_user_password.dart';
+import 'package:projet_box/widgets/box_custom_bar.dart';
+
 class BoxRegister extends StatefulWidget {
   const BoxRegister({super.key});
 
