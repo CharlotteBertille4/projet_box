@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:projet_box/constants/helpers.dart';
 import 'package:projet_box/widgets/dot_indicator.dart';
 import 'package:projet_box/widgets/no_account.dart';
@@ -46,28 +47,28 @@ class BoxNumberJob extends StatelessWidget {
             key: form_2,
             child: Column(
               children: [
-                // IntlPhoneField(
-                //   initialCountryCode: 'BJ',
-                //   countries: const ["BJ", "CI", "TG"],
-                //   // disableLengthCheck: true,
-                //   // validator: (v) => formConfig["momo"]["rule"](v!.number),
-                //   invalidNumberMessage: "Numéro valide",
-                //   controller: formConfig["momo"]["controller"],
-                //   textAlignVertical: TextAlignVertical.bottom,
-                //   dropdownTextStyle: makeTextStyleWith(
-                //     textfontSize: 15,
-                //     textfontWeight: FontWeight.w400,
-                //     textColor: boxdarknessBlack,
-                //   ),
-                //   style: makeTextStyleWith(
-                //     textfontSize: 15,
-                //     textfontWeight: FontWeight.w400,
-                //     textColor: boxdarknessBlack,
-                //   ),
-                //   decoration: const InputDecoration(
-                //     hintText: "Numéro Momo ou Flooz",
-                //   ),
-                // ),
+                IntlPhoneField(
+                  initialCountryCode: 'BJ',
+                  countries: const ["BJ", "CI", "TG"],
+                  // disableLengthCheck: true,
+                  // validator: (v) => formConfig["momo"]["rule"](v!.number),
+                  invalidNumberMessage: "Numéro valide",
+                  controller: formConfig["momo"]["controller"],
+                  textAlignVertical: TextAlignVertical.bottom,
+                  dropdownTextStyle: makeTextStyleWith(
+                    textfontSize: 15,
+                    textfontWeight: FontWeight.w400,
+                    textColor: boxdarknessBlack,
+                  ),
+                  style: makeTextStyleWith(
+                    textfontSize: 15,
+                    textfontWeight: FontWeight.w400,
+                    textColor: boxdarknessBlack,
+                  ),
+                  decoration: const InputDecoration(
+                    hintText: "Numéro Momo ou Flooz",
+                  ),
+                ),
                 const SizedBox(height: 15),
                 TextFormField(
                   controller: formConfig["profession"]["controller"],

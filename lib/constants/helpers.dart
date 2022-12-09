@@ -135,7 +135,7 @@ ThemeData boxAppThemeData = ThemeData(
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       fixedSize: const Size.fromHeight(48),
-      backgroundColor: boxGoldenPrimary,
+      //backgroundColor: boxGoldenPrimary,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(10),
