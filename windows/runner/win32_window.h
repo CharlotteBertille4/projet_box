@@ -28,6 +28,7 @@ class Win32Window {
   Win32Window();
   virtual ~Win32Window();
 
+<<<<<<< HEAD
   // Creates and shows a win32 window with |title| and position and size using
   // |origin| and |size|. New windows are created on the default monitor. Window
   // sizes are specified to the OS in physical pixels, hence to ensure a
@@ -37,6 +38,18 @@ class Win32Window {
   bool CreateAndShow(const std::wstring& title,
                      const Point& origin,
                      const Size& size);
+=======
+  // Creates a win32 window with |title| that is positioned and sized using
+  // |origin| and |size|. New windows are created on the default monitor. Window
+  // sizes are specified to the OS in physical pixels, hence to ensure a
+  // consistent size this function will scale the inputted width and height as
+  // as appropriate for the default monitor. The window is invisible until
+  // |Show| is called. Returns true if the window was created successfully.
+  bool Create(const std::wstring& title, const Point& origin, const Size& size);
+
+  // Show the current window. Returns true if the window was successfully shown.
+  bool Show();
+>>>>>>> 58e92c3b1ba6db4fe09df012cb460a4e0f111b78
 
   // Release OS resources associated with window.
   void Destroy();
@@ -86,6 +99,12 @@ class Win32Window {
   // Retrieves a class instance pointer for |window|
   static Win32Window* GetThisFromHandle(HWND const window) noexcept;
 
+<<<<<<< HEAD
+=======
+  // Update the window frame's theme to match the system theme.
+  static void UpdateTheme(HWND const window);
+
+>>>>>>> 58e92c3b1ba6db4fe09df012cb460a4e0f111b78
   bool quit_on_close_ = false;
 
   // window handle for top level window.

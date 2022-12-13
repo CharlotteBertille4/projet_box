@@ -1,3 +1,4 @@
+
 # projet_box
 
 A new Flutter project.
@@ -14,3 +15,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+Projet d'épargne en ligne 
+
+-Juste après avoir cloné le projet, passer à la compilation du projet
+-Assurez vous d'avoir l'écran de flutter demo home page:
+
