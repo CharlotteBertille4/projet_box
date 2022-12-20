@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:projet_box/screens/box_home.dart';
 import 'package:projet_box/constants/helpers.dart';
-import 'package:projet_box/widgets/box_custom_bar.dart';
 import 'package:projet_box/widgets/no_account.dart';
+import 'package:projet_box/widgets/box_custom_bar.dart';
 
 class BoxConnexion extends StatefulWidget {
   const BoxConnexion({super.key});
@@ -11,6 +12,40 @@ class BoxConnexion extends StatefulWidget {
 }
 
 class _BoxConnexionState extends State<BoxConnexion> {
+  // Accessoirement la fonction asynchrone d'authentification
+  // Puis de redirection vers la page principale
+  void loaderAndRedirect(context) async {
+    // Affiche un loader dans un AlertDialog
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: const <Widget>[
+              CircularProgressIndicator(),
+              SizedBox(height: 20),
+              Text('Chargement en cours...'),
+            ],
+          ),
+        );
+      },
+    );
+
+    // Attend 10 secondes ou lance l'authentification
+    await Future.delayed(const Duration(seconds: 5)).then(
+      (value) => {
+        Navigator.of(context).pop(),
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const BoxHome(),
+          ),
+        )
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final deviceWith = MediaQuery.of(context).size.width;
@@ -78,9 +113,7 @@ class _BoxConnexionState extends State<BoxConnexion> {
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () => {
-                      // CONTROLE ET LANCEMENT DES REQUETTES DE CONNECTION
-                    },
+                    onPressed: () => loaderAndRedirect(context),
                     child: Text(
                       "Se connecter",
                       textScaleFactor: textscaleFactor,

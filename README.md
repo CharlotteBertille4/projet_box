@@ -18,6 +18,6 @@ samples, guidance on mobile development, and a full API reference.
 
 Projet d'épargne en ligne 
 
--Juste après avoir cloné le projet, passer à la compilation du projet
--Assurez vous d'avoir l'écran de flutter demo home page:
+- Juste après avoir cloné le projet, passer à la compilation du projet
+- Assurez vous d'avoir l'écran de flutter demo home page:
 

@@ -8,6 +8,8 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 class $AssetsDesignGen {
   const $AssetsDesignGen();
@@ -15,6 +17,10 @@ class $AssetsDesignGen {
   /// File path: assets/design/interfaces1.png
   AssetGenImage get interfaces1 =>
       const AssetGenImage('assets/design/interfaces1.png');
+
+  /// File path: assets/design/interfaces10.png
+  AssetGenImage get interfaces10 =>
+      const AssetGenImage('assets/design/interfaces10.png');
 
   /// File path: assets/design/interfaces2.png
   AssetGenImage get interfaces2 =>
@@ -36,19 +42,39 @@ class $AssetsDesignGen {
   AssetGenImage get interfaces6 =>
       const AssetGenImage('assets/design/interfaces6.png');
 
+  /// File path: assets/design/interfaces7.png
+  AssetGenImage get interfaces7 =>
+      const AssetGenImage('assets/design/interfaces7.png');
+
+  /// File path: assets/design/interfaces8.png
+  AssetGenImage get interfaces8 =>
+      const AssetGenImage('assets/design/interfaces8.png');
+
+  /// File path: assets/design/interfaces9.png
+  AssetGenImage get interfaces9 =>
+      const AssetGenImage('assets/design/interfaces9.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         interfaces1,
+        interfaces10,
         interfaces2,
         interfaces3,
         interfaces4,
         interfaces5,
-        interfaces6
+        interfaces6,
+        interfaces7,
+        interfaces8,
+        interfaces9
       ];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/ajout_caisse.png
+  AssetGenImage get ajoutCaisse =>
+      const AssetGenImage('assets/images/ajout_caisse.png');
 
   /// File path: assets/images/box-account-init.png
   AssetGenImage get boxAccountInit =>
@@ -72,9 +98,15 @@ class $AssetsImagesGen {
   AssetGenImage get circular =>
       const AssetGenImage('assets/images/circular.png');
 
+  /// File path: assets/images/croix.png
+  AssetGenImage get croix => const AssetGenImage('assets/images/croix.png');
+
   /// File path: assets/images/demarrer-epargne.png
   AssetGenImage get demarrerEpargne =>
       const AssetGenImage('assets/images/demarrer-epargne.png');
+
+  /// File path: assets/images/desktop.png
+  AssetGenImage get desktop => const AssetGenImage('assets/images/desktop.png');
 
   /// File path: assets/images/ellipse 2.png
   AssetGenImage get ellipse2 =>
@@ -88,12 +120,21 @@ class $AssetsImagesGen {
   AssetGenImage get iconHorloge =>
       const AssetGenImage('assets/images/icon_horloge.png');
 
+  /// File path: assets/images/momo.png
+  AssetGenImage get momo => const AssetGenImage('assets/images/momo.png');
+
+  /// File path: assets/images/moov.png
+  AssetGenImage get moov => const AssetGenImage('assets/images/moov.png');
+
   /// File path: assets/images/oeuf.png
   AssetGenImage get oeuf => const AssetGenImage('assets/images/oeuf.png');
 
   /// File path: assets/images/planifier-epargne.png
   AssetGenImage get planifierEpargne =>
       const AssetGenImage('assets/images/planifier-epargne.png');
+
+  /// File path: assets/images/plate.png
+  AssetGenImage get plate => const AssetGenImage('assets/images/plate.png');
 
   /// File path: assets/images/recup-epargne.png
   AssetGenImage get recupEpargne =>
@@ -107,21 +148,77 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        ajoutCaisse,
         boxAccountInit,
         boxEgg,
         boxLogoName,
         boxLogo,
         cadenas,
         circular,
+        croix,
         demarrerEpargne,
+        desktop,
         ellipse2,
         epargneSecu,
         iconHorloge,
+        momo,
+        moov,
         oeuf,
         planifierEpargne,
+        plate,
         recupEpargne,
         transac,
         zenBox
+      ];
+}
+
+class $AssetsSvgGen {
+  const $AssetsSvgGen();
+
+  /// File path: assets/svg/about.svg
+  SvgGenImage get about => const SvgGenImage('assets/svg/about.svg');
+
+  /// File path: assets/svg/annulercaisse.svg
+  SvgGenImage get annulercaisse =>
+      const SvgGenImage('assets/svg/annulercaisse.svg');
+
+  /// File path: assets/svg/cadeau.svg
+  SvgGenImage get cadeau => const SvgGenImage('assets/svg/cadeau.svg');
+
+  /// File path: assets/svg/commercial.svg
+  SvgGenImage get commercial => const SvgGenImage('assets/svg/commercial.svg');
+
+  /// File path: assets/svg/contact.svg
+  SvgGenImage get contact => const SvgGenImage('assets/svg/contact.svg');
+
+  /// File path: assets/svg/creercaisse.svg
+  SvgGenImage get creercaisse =>
+      const SvgGenImage('assets/svg/creercaisse.svg');
+
+  /// File path: assets/svg/historique.svg
+  SvgGenImage get historique => const SvgGenImage('assets/svg/historique.svg');
+
+  /// File path: assets/svg/pay.svg
+  SvgGenImage get pay => const SvgGenImage('assets/svg/pay.svg');
+
+  /// File path: assets/svg/pwd.svg
+  SvgGenImage get pwd => const SvgGenImage('assets/svg/pwd.svg');
+
+  /// File path: assets/svg/share.svg
+  SvgGenImage get share => const SvgGenImage('assets/svg/share.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        about,
+        annulercaisse,
+        cadeau,
+        commercial,
+        contact,
+        creercaisse,
+        historique,
+        pay,
+        pwd,
+        share
       ];
 }
 
@@ -130,6 +227,7 @@ class Assets {
 
   static const $AssetsDesignGen design = $AssetsDesignGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 
 class AssetGenImage {
@@ -191,6 +289,57 @@ class AssetGenImage {
   }
 
   ImageProvider provider() => AssetImage(_assetName);
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class SvgGenImage {
+  const SvgGenImage(this._assetName);
+
+  final String _assetName;
+
+  SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    String? package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    Color? color,
+    BlendMode colorBlendMode = BlendMode.srcIn,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    Clip clipBehavior = Clip.hardEdge,
+    bool cacheColorFilter = false,
+    SvgTheme? theme,
+  }) {
+    return SvgPicture.asset(
+      _assetName,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      bundle: bundle,
+      package: package,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      color: color,
+      colorBlendMode: colorBlendMode,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      clipBehavior: clipBehavior,
+      cacheColorFilter: cacheColorFilter,
+      theme: theme,
+    );
+  }
 
   String get path => _assetName;
 

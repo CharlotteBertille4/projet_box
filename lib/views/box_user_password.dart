@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet_box/constants/helpers.dart';
+import 'package:projet_box/screens/box_home.dart';
 import 'package:projet_box/widgets/dot_indicator.dart';
 import 'package:projet_box/widgets/no_account.dart';
 
@@ -17,6 +18,40 @@ class BoxUserPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceWith = MediaQuery.of(context).size.width;
     final textscaleFactor = deviceWith / mockupWidth;
+
+    // Accessoirement la fonction asynchrone d'authentification
+    // Puis de redirection vers la page principale
+    void loaderAndRedirect(context) async {
+      // Affiche un loader dans un AlertDialog
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          return AlertDialog(
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: const <Widget>[
+                CircularProgressIndicator(),
+                SizedBox(height: 20),
+                Text('Chargement en cours...'),
+              ],
+            ),
+          );
+        },
+      );
+
+      // Attend 10 secondes ou lance l'authentification
+      await Future.delayed(const Duration(seconds: 10)).then(
+        (value) => {
+          Navigator.of(context).pop(),
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) => const BoxHome(),
+            ),
+          )
+        },
+      );
+    }
 
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
@@ -89,23 +124,9 @@ class BoxUserPassword extends StatelessWidget {
             children: [
               Expanded(
                 child: ElevatedButton(
-                  onPressed: () => {
-                    // :: Fonction de creation d'un utilisateur
-
-                    if (form_4.currentState!.validate())
-                      {
-                        debugPrint(formConfig['nom']['controller'].text),
-                        debugPrint(formConfig['prenom']['controller'].text),
-                        debugPrint(formConfig['momo']['controller'].text),
-                        debugPrint(
-                            formConfig['dateNaissance']['controller'].text),
-                        debugPrint(formConfig['profession']['controller'].text),
-                        debugPrint(formConfig['password']['controller'].text),
-                        debugPrint(
-                            formConfig['confirmPassword']['controller'].text),
-                        // nextFormHandler(),
-                      }
-                  },
+                  // Une interface d'OTP avant le home
+                  // Anonce de l'ID de l'utilisateur
+                  onPressed: () => loaderAndRedirect(context),
                   child: Text(
                     "S'inscrire",
                     textScaleFactor: textscaleFactor,

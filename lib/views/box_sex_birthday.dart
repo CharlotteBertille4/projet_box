@@ -53,24 +53,24 @@ class _BoxSexBirthdayState extends State<BoxSexBirthday> {
             key: form_3,
             child: Column(
               children: [
-                // DropdownButtonFormField(
-                //   hint: const Text("Sexe"),
-                //   items: choicesSexeList,
-                //   // validator: formConfig["sexe"]["rule"],
-                //   isDense: false,
-                //   style: makeTextStyleWith(
-                //     textfontSize: 15,
-                //     textfontWeight: FontWeight.w400,
-                //     textColor: boxdarknessBlack,
-                //   ),
-                //   decoration: const InputDecoration(
-                //     alignLabelWithHint: true,
-                //     contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                //   ),
-                //   onChanged: ((value) {
-                //     debugPrint(value.toString());
-                //   }),
-                // ),
+                DropdownButtonFormField(
+                  hint: const Text("Sexe"),
+                  items: choicesSexeList,
+                  // validator: formConfig["sexe"]["rule"],
+                  isDense: false,
+                  style: makeTextStyleWith(
+                    textfontSize: 15,
+                    textfontWeight: FontWeight.w400,
+                    textColor: boxdarknessBlack,
+                  ),
+                  decoration: const InputDecoration(
+                    alignLabelWithHint: true,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                  ),
+                  onChanged: ((value) {
+                    debugPrint(value.toString());
+                  }),
+                ),
                 const SizedBox(height: 15),
                 TextFormField(
                   controller: _dateController,
