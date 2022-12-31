@@ -7,10 +7,14 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     required this.textscaleFactor,
     required this.label,
+    required this.haveBackBtn,
+    required this.prevFormHandle,
   });
 
   final double textscaleFactor;
   final String label;
+  final bool haveBackBtn;
+  final Function prevFormHandle;
 
   @override
   Widget build(BuildContext context) {
@@ -58,37 +62,53 @@ class CustomAppBar extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
-          child: Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    label,
-                    textScaleFactor: textscaleFactor,
-                    style: GoogleFonts.outfit(
-                      fontSize: 24,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    "Bienvenue !",
-                    textScaleFactor: textscaleFactor,
-                    style: GoogleFonts.outfit(
-                      fontSize: 13,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
+              Text(
+                label,
+                textScaleFactor: textscaleFactor,
+                style: GoogleFonts.outfit(
+                  fontSize: 24,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                "Bienvenue !",
+                textScaleFactor: textscaleFactor,
+                style: GoogleFonts.outfit(
+                  fontSize: 13,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
               ),
             ],
           ),
-        )
+        ),
+        haveBackBtn
+            ? Positioned(
+                right: 15,
+                top: 45,
+                child: TextButton.icon(
+                  icon: const Icon(Icons.arrow_back),
+                  onPressed: () => prevFormHandle(),
+                  label: Text(
+                    "Retour",
+                    textScaleFactor: textscaleFactor,
+                    style: GoogleFonts.outfit(
+                      fontSize: 15,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              )
+            : Container(),
       ],
     );
   }

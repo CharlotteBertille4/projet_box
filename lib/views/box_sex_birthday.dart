@@ -35,7 +35,7 @@ class _BoxSexBirthdayState extends State<BoxSexBirthday> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ...List.generate(
-                4,
+                steps,
                 (index) => Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: DotIndicator(

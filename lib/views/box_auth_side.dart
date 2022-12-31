@@ -94,6 +94,7 @@ class BoxAuthSide extends StatelessWidget {
                       ),
                     },
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: boxdarknessBlack,
                       fixedSize: const Size.fromHeight(65),
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(

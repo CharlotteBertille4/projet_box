@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:projet_box/constants/helpers.dart';
-import 'package:projet_box/widgets/box_custombottombar.dart';
-import 'package:projet_box/widgets/box_customfloatingbtn.dart';
 
 class BoxCreateInterface extends StatefulWidget {
   const BoxCreateInterface({super.key});
@@ -21,14 +19,34 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
   @override
   void initState() {
     remideMeSaving = true;
-    startBoxDateCont = TextEditingController(text: "dd/MM/AAAA");
-    endBoxDateCont = TextEditingController(text: "dd/MM/AAAA");
+    startBoxDateCont = TextEditingController(text: "JJ/MM/AAAA");
+    endBoxDateCont = TextEditingController(text: "JJ/MM/AAAA");
     super.initState();
   }
 
+  // selectTypeCaisse(context) {
+  //   // Affiche un loader dans un AlertDialog
+  //   showDialog(
+  //     context: context,
+  //     barrierDismissible: false,
+  //     builder: (context) {
+  //       return AlertDialog(
+  //         content: Column(
+  //           mainAxisSize: MainAxisSize.min,
+  //           children: const <Widget>[
+  //             CircularProgressIndicator(),
+  //             SizedBox(height: 20),
+  //             Text('Chargement en cours...'),
+  //           ],
+  //         ),
+  //       );
+  //     },
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
-    bool keyboardIsOpened = MediaQuery.of(context).viewInsets.bottom != 0.0;
+    // bool keyboardIsOpened = MediaQuery.of(context).viewInsets.bottom != 0.0;
     String? selectedValue = modePaiementList.first.value;
     final createBoxForm = GlobalKey<FormState>();
 
@@ -89,11 +107,39 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                 ),
               ),
               const SizedBox(height: 15),
+              DropdownButtonFormField(
+                //value: selectedValue,
+                items: typeCaisse,
+                decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                ),
+                hint: Text(
+                  'Type de caisse',
+                  style: makeTextStyleWith(
+                    textfontSize: 15,
+                    textfontWeight: FontWeight.w400,
+                    textColor: boxHintColor,
+                  ),
+                ),
+                style: makeTextStyleWith(
+                  textfontSize: 15,
+                  textfontWeight: FontWeight.w400,
+                  textColor: boxdarknessBlack,
+                ),
+                onChanged: ((value) {
+                  debugPrint(value.toString());
+                }),
+              ),
+              const SizedBox(height: 15),
               TextFormField(
-                obscureText: true,
-                keyboardType: TextInputType.visiblePassword,
+                onTap: () {
+                  // Rediriger vers l'interface de selection
+                  // de frequence pour une caisse
+                },
+                readOnly: true,
                 decoration: const InputDecoration(
                   hintText: "Fréquence",
+                  suffixIcon: Icon(Icons.arrow_forward_ios, size: 18),
                 ),
                 style: makeTextStyleWith(
                   textfontSize: 15,
@@ -103,23 +149,9 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
               ),
               const SizedBox(height: 15),
               TextFormField(
-                obscureText: true,
                 keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
                   hintText: "Montant",
-                ),
-                style: makeTextStyleWith(
-                  textfontSize: 15,
-                  textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
-                ),
-              ),
-              const SizedBox(height: 15),
-              TextFormField(
-                obscureText: true,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  hintText: "Fuseau horaire",
                 ),
                 style: makeTextStyleWith(
                   textfontSize: 15,

@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:projet_box/constants/helpers.dart';
 import 'package:projet_box/views/box_menu.dart';
 import 'package:projet_box/widgets/box_saving_progress.dart';
@@ -15,10 +18,40 @@ class BoxSavingBoard extends StatefulWidget {
 
 class _BoxSavingBoardState extends State<BoxSavingBoard> {
   late ValueNotifier<double> valueNotifier;
+  late double savingTimerValue;
+  late String currentDate;
+  Timer? savingCounterTimer;
+
   @override
   void initState() {
     super.initState();
-    valueNotifier = ValueNotifier(45);
+    savingTimerValue = 0.0;
+    currentDate = DateFormat('H:m:s').format(DateTime.now()).toString();
+    valueNotifier = ValueNotifier(savingTimerValue);
+    savingCounterTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      int target = const Duration(seconds: 60).inSeconds;
+      int unityTarget = const Duration(seconds: 1).inSeconds;
+
+      setState(() {
+        currentDate = DateFormat('H:m:s').format(DateTime.now()).toString();
+        savingTimerValue += ((unityTarget * 100) / target);
+
+        savingTimerValue > 100.0
+            ? savingTimerValue = 100.0
+            : valueNotifier = ValueNotifier(savingTimerValue);
+      });
+
+      // TERMINER LE TIMER QUAND LE DECOMPTE EST FINI
+      if (valueNotifier.value == 100.0) {
+        timer.cancel();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    savingCounterTimer!.cancel();
+    super.dispose();
   }
 
   @override
@@ -81,7 +114,7 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          const Text('Anniversaire Papa'),
+                          const Text('Salaire'),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -109,7 +142,7 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                                   style: ElevatedButton.styleFrom(),
                                   onPressed: () {},
                                   child: Text(
-                                    "2 000 000 FCFA",
+                                    "10 500 FCFA",
                                     overflow: TextOverflow.ellipsis,
                                     style: makeTextStyleWith(
                                       textfontSize: 18,
@@ -130,22 +163,39 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                     bottom: 60,
                     width: 150,
                     left: MediaQuery.of(context).size.width - 280,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        fixedSize: const Size.fromHeight(60),
-                      ),
-                      onPressed: () => {
-                        // CONTROLE ET CREATION D'UNE CAISSE
-                        if (createBoxForm.currentState!.validate())
-                          {debugPrint("DEPOT SUR UNE CAISSE")}
+                    child: InkWell(
+                      onTap: () {
+                        // TODO IMPLEMENTER UN ACTION DE DÉPOT VERS LA CAISSE
                       },
-                      child: Text(
-                        "+ Dépot",
-                        style: makeTextStyleWith(
-                          textfontSize: 26,
-                          textfontWeight: FontWeight.w600,
-                          textColor: boxdarknessBlack,
+                      child: Container(
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color(0xff747474),
+                              Color(0xff07051C),
+                            ],
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.57),
+                              offset: const Offset(0, 4),
+                              blurRadius: 9,
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            "+ DEPOT",
+                            style: makeTextStyleWith(
+                              textfontSize: 26,
+                              textfontWeight: FontWeight.w600,
+                              textColor: boxWhiteness,
+                            ),
+                          ),
                         ),
                       ),
                     ),

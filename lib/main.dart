@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet_box/constants/helpers.dart';
-import 'package:projet_box/views/box_auth_side.dart';
+import 'package:projet_box/views/box_splash_screen.dart';
 
 void main() {
   runApp(const ProjetBox());
@@ -16,7 +16,7 @@ class ProjetBox extends StatelessWidget {
       theme: boxAppThemeData,
       debugShowCheckedModeBanner: false,
       locale: const Locale('fr', ''),
-      home: const BoxAuthSide(),
+      home: const BoxSplashScreen(),
     );
   }
 }

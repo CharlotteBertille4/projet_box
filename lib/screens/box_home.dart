@@ -38,10 +38,13 @@ class _BoxHomeState extends State<BoxHome> {
 
   @override
   Widget build(BuildContext context) {
+    bool keyboardIsOpened = MediaQuery.of(context).viewInsets.bottom != 0.0;
+
     return ScaffoldGradientBackground(
       gradient: boxRad,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: const CustomFloatingActionBtn(),
+      floatingActionButton:
+          keyboardIsOpened ? null : const CustomFloatingActionBtn(),
       bottomNavigationBar: CustomBottombar(
         pageIndex: pageIndex,
         switchPage: displayPageAt,

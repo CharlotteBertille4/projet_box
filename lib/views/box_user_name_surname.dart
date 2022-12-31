@@ -27,7 +27,7 @@ class BoxUserNameSurname extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ...List.generate(
-                4,
+                steps,
                 (index) => Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: DotIndicator(
@@ -84,7 +84,7 @@ class BoxUserNameSurname extends StatelessWidget {
                   onPressed: () => {
                     if (form_1.currentState!.validate())
                       {
-                        // debugPrint(name)
+                        //TODO: GESTION DU FORMULAIRE
                         nextFormHandler(),
                       }
                   },

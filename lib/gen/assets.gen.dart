@@ -91,6 +91,10 @@ class $AssetsImagesGen {
   AssetGenImage get boxLogo =>
       const AssetGenImage('assets/images/box-logo.png');
 
+  /// File path: assets/images/break-egg.png
+  AssetGenImage get breakEgg =>
+      const AssetGenImage('assets/images/break-egg.png');
+
   /// File path: assets/images/cadenas.png
   AssetGenImage get cadenas => const AssetGenImage('assets/images/cadenas.png');
 
@@ -140,6 +144,10 @@ class $AssetsImagesGen {
   AssetGenImage get recupEpargne =>
       const AssetGenImage('assets/images/recup-epargne.png');
 
+  /// File path: assets/images/saving-cuate.png
+  AssetGenImage get savingCuate =>
+      const AssetGenImage('assets/images/saving-cuate.png');
+
   /// File path: assets/images/transac.png
   AssetGenImage get transac => const AssetGenImage('assets/images/transac.png');
 
@@ -153,6 +161,7 @@ class $AssetsImagesGen {
         boxEgg,
         boxLogoName,
         boxLogo,
+        breakEgg,
         cadenas,
         circular,
         croix,
@@ -167,6 +176,7 @@ class $AssetsImagesGen {
         planifierEpargne,
         plate,
         recupEpargne,
+        savingCuate,
         transac,
         zenBox
       ];

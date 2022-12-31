@@ -3,6 +3,13 @@ import 'package:form_validator/form_validator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projet_box/gen/assets.gen.dart';
 
+///
+/// La date de début de cotisation ne peut depassé la date courante
+///  dureeEpargne = Nombre seconde séparant le debut et fin
+///  dureeEpargne = dateFin - DateDebut (seconde)
+///  progression = = %des seconde ecoulé dans la durée d'épargne
+
+
 // Creating my custom material color
 const Map<int, Color> boxGoldenShades = {
   50: Color.fromRGBO(188, 138, 26, .1),
@@ -40,6 +47,8 @@ LinearGradient floatingBtnGradient = const LinearGradient(
 
 const mockupHeight = 812;
 const mockupWidth = 375;
+
+const steps = 5;
 
 // Les code couleurs
 
@@ -213,12 +222,36 @@ List<DropdownMenuItem<String>> modePaiementList = [
   ),
 ];
 
+List<DropdownMenuItem<String>> typeCaisse = [
+  DropdownMenuItem(
+    value: "fixe",
+    child: Text(
+      "Caisse Fixe",
+      style: makeTextStyleWith(
+        textfontSize: 15,
+        textfontWeight: FontWeight.w400,
+      ),
+    ),
+  ),
+  DropdownMenuItem(
+    value: "libre",
+    child: Text(
+      "Caisse Libre",
+      style: makeTextStyleWith(
+        textfontSize: 15,
+        textfontWeight: FontWeight.w400,
+      ),
+    ),
+  ),
+];
 // Register user validate rules
 
 final form_1 = GlobalKey<FormState>();
 final form_2 = GlobalKey<FormState>();
 final form_3 = GlobalKey<FormState>();
 final form_4 = GlobalKey<FormState>();
+final form_5 = GlobalKey<FormState>();
+
 final createBoxForm = GlobalKey<FormState>();
 
 TextEditingController nomController = TextEditingController();
@@ -228,6 +261,8 @@ TextEditingController prenomController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
 TextEditingController birthdayController = TextEditingController();
 TextEditingController professionController = TextEditingController();
+TextEditingController codeParrainage = TextEditingController();
+
 TextEditingController consfirmPasswordController = TextEditingController();
 
 // Controller des inputs pour la creation d'une caisse
@@ -296,14 +331,39 @@ Map formConfig = {
       requiredMessage: "Confirmer le mot de passe",
     ).minLength(6, "6 caractères minimun requis").build()
   },
+
+  // form 5
+  'codeParrainage': {
+    "controller": codeParrainage,
+    "rule": ValidationBuilder(
+      requiredMessage: "Entrer votre code de parrainage",
+    ).regExp(RegExp(r'^\d{6}$'), "6 chiffres maximun").build()
+  },
 };
 
 // Configuration du menu profile
 
 List profileConfig = [
-  {"label": "Mode de paiement", "icon": Assets.svg.pay.svg()},
-  {"label": "Mot de passe", "icon": Assets.svg.pwd.svg()},
-  {"label": "ID Carte d'identité", "icon": Assets.svg.pay.svg()}
+  {
+    "label": "Email",
+    "value": "ekammianmichael@gmail.com",
+    "icon": const Icon(Icons.email, color: boxWhiteness),
+  },
+  {
+    "label": "Mot de passe",
+    "value": "**********",
+    "icon": Assets.svg.pwd.svg(),
+  },
+  {
+    "label": "ID Carte d'identité",
+    "value": "100802565",
+    "icon": const Icon(Icons.insert_drive_file, color: boxWhiteness)
+  },
+  {
+    "label": "Mode de paiement",
+    "value": "Mobile Money",
+    "icon": Assets.svg.pay.svg(),
+  },
 ];
 
 // Configuration du menu
@@ -311,12 +371,13 @@ List profileConfig = [
 List menuConfig = [
   {"label": "Historique", "icon": Assets.svg.historique.svg()},
   {"label": "Créer une caisse", "icon": Assets.svg.creercaisse.svg()},
-  {"label": "Annulée une caisse", "icon": Assets.svg.annulercaisse.svg()},
+  {"label": "Annuler une caisse", "icon": Assets.svg.annulercaisse.svg()},
   {"label": "Cadeaux", "icon": Assets.svg.cadeau.svg()},
   {"label": "Partagé l'application", "icon": Assets.svg.share.svg()},
   {"label": "Compte commercial", "icon": Assets.svg.commercial.svg()},
   {"label": "Contactez nous", "icon": Assets.svg.contact.svg()},
   {"label": "A propos", "icon": Assets.svg.about.svg()},
+  {"label": "Déconnexion", "icon": Icon(Icons.logout, color: boxGoldenPrimary)},
 ];
 
 RadialGradient rader = const RadialGradient(

@@ -55,6 +55,8 @@ class _BoxConnexionState extends State<BoxConnexion> {
         preferredSize: const Size.fromRadius(100),
         child: CustomAppBar(
           textscaleFactor: textscaleFactor,
+          prevFormHandle: () {},
+          haveBackBtn: false,
           label: "Connexion",
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet_box/constants/helpers.dart';
+import 'package:projet_box/views/box_affiliate_confidentiality.dart';
 import 'package:projet_box/views/box_number_job.dart';
 import 'package:projet_box/views/box_sex_birthday.dart';
 import 'package:projet_box/views/box_user_name_surname.dart';
@@ -41,6 +42,15 @@ class _BoxRegisterState extends State<BoxRegister> {
     });
   }
 
+  void displayPrevForm() {
+    setState(() {
+      _pageController.previousPage(
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.ease,
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final deviceWith = MediaQuery.of(context).size.width;
@@ -51,6 +61,8 @@ class _BoxRegisterState extends State<BoxRegister> {
         preferredSize: const Size.fromRadius(100),
         child: CustomAppBar(
           textscaleFactor: textscaleFactor,
+          prevFormHandle: displayPrevForm,
+          haveBackBtn: (pageIndex > 0),
           label: "Inscription",
         ),
       ),
@@ -74,6 +86,10 @@ class _BoxRegisterState extends State<BoxRegister> {
             nextFormHandler: displayNextForm,
           ),
           BoxUserPassword(
+            currentPageIndex: pageIndex,
+            nextFormHandler: displayNextForm,
+          ),
+          BoxAffilateConfidentiality(
             currentPageIndex: pageIndex,
             nextFormHandler: displayNextForm,
           ),

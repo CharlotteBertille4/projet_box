@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:projet_box/constants/helpers.dart';
@@ -20,6 +19,9 @@ class BoxSavingProgress extends StatelessWidget {
       child: Column(
         children: [
           CircularPercentIndicator(
+            animation: true,
+            animateFromLastPercent: true,
+            curve: Curves.ease,
             radius: 120,
             lineWidth: 30,
             percent: savingNotifyer.value / 100,
@@ -29,7 +31,9 @@ class BoxSavingProgress extends StatelessWidget {
             center: Container(
               width: double.infinity,
               decoration: BoxDecoration(gradient: eggContainerGradient),
-              child: Assets.images.oeuf.image(scale: 1.2),
+              child: savingNotifyer.value >= 98
+                  ? Assets.images.breakEgg.image(scale: 1.2)
+                  : Assets.images.oeuf.image(scale: 1.2),
             ),
           ),
           const SizedBox(height: 25),
@@ -45,6 +49,7 @@ class BoxSavingProgress extends StatelessWidget {
               const SizedBox(width: 10),
               Text(
                 "20:02:04",
+                // (savingNotifyer.value).toString(),
                 style: GoogleFonts.outfit(
                   fontSize: 30,
                   fontStyle: FontStyle.normal,

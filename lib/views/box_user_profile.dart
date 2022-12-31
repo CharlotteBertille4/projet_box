@@ -21,6 +21,352 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
     super.initState();
   }
 
+  setProfileInfos(context) {
+    // Affiche un loader dans un AlertDialog
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            'Infos de Profile',
+            style: makeTextStyleWith(
+              textfontSize: 18,
+              textfontWeight: FontWeight.w600,
+              textColor: boxdarknessBlack,
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextFormField(
+                keyboardType: TextInputType.text,
+                style: makeTextStyleWith(
+                  textfontSize: 15,
+                  textfontWeight: FontWeight.w400,
+                  textColor: boxdarknessBlack,
+                ),
+                decoration: const InputDecoration(
+                  hintText: "Nom & Prénoms",
+                ),
+              ),
+              const SizedBox(height: 20),
+              TextFormField(
+                keyboardType: TextInputType.phone,
+                style: makeTextStyleWith(
+                  textfontSize: 15,
+                  textfontWeight: FontWeight.w400,
+                  textColor: boxdarknessBlack,
+                ),
+                decoration: const InputDecoration(
+                  hintText: "Numéro de télephone",
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Valider',
+                style: makeTextStyleWith(
+                  textfontSize: 18,
+                  textfontWeight: FontWeight.w500,
+                  textColor: boxdarknessBlack,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'Annuler',
+                style: makeTextStyleWith(
+                  textfontSize: 18,
+                  textfontWeight: FontWeight.w500,
+                  textColor: Colors.red,
+                ),
+              ),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  setPersonalEmail(context) {
+    // Affiche un loader dans un AlertDialog
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            'Infos de profile',
+            style: makeTextStyleWith(
+              textfontSize: 18,
+              textfontWeight: FontWeight.w600,
+              textColor: boxdarknessBlack,
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextFormField(
+                keyboardType: TextInputType.text,
+                style: makeTextStyleWith(
+                  textfontSize: 15,
+                  textfontWeight: FontWeight.w400,
+                  textColor: boxdarknessBlack,
+                ),
+                decoration: const InputDecoration(
+                  hintText: "Entrer votre email",
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Valider',
+                style: makeTextStyleWith(
+                  textfontSize: 18,
+                  textfontWeight: FontWeight.w500,
+                  textColor: boxdarknessBlack,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'Annuler',
+                style: makeTextStyleWith(
+                  textfontSize: 18,
+                  textfontWeight: FontWeight.w500,
+                  textColor: Colors.red,
+                ),
+              ),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  setPassword(context) {
+    // Affiche un loader dans un AlertDialog
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            'Mot de passe',
+            style: makeTextStyleWith(
+              textfontSize: 18,
+              textfontWeight: FontWeight.w600,
+              textColor: boxdarknessBlack,
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextFormField(
+                keyboardType: TextInputType.visiblePassword,
+                style: makeTextStyleWith(
+                  textfontSize: 15,
+                  textfontWeight: FontWeight.w400,
+                  textColor: boxdarknessBlack,
+                ),
+                decoration: const InputDecoration(
+                  hintText: "Entrer l'ancien mot de passe",
+                ),
+              ),
+              const SizedBox(height: 15),
+              TextFormField(
+                keyboardType: TextInputType.visiblePassword,
+                style: makeTextStyleWith(
+                  textfontSize: 15,
+                  textfontWeight: FontWeight.w400,
+                  textColor: boxdarknessBlack,
+                ),
+                decoration: const InputDecoration(
+                  hintText: "Entrer le nouveau mot de passe",
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Valider',
+                style: makeTextStyleWith(
+                  textfontSize: 18,
+                  textfontWeight: FontWeight.w500,
+                  textColor: boxdarknessBlack,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'Annuler',
+                style: makeTextStyleWith(
+                  textfontSize: 18,
+                  textfontWeight: FontWeight.w500,
+                  textColor: Colors.red,
+                ),
+              ),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  setIdCart(context) {
+    // Affiche un loader dans un AlertDialog
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            'ID carte d\'identité',
+            style: makeTextStyleWith(
+              textfontSize: 18,
+              textfontWeight: FontWeight.w600,
+              textColor: boxdarknessBlack,
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextFormField(
+                keyboardType: TextInputType.text,
+                style: makeTextStyleWith(
+                  textfontSize: 15,
+                  textfontWeight: FontWeight.w400,
+                  textColor: boxdarknessBlack,
+                ),
+                decoration: const InputDecoration(
+                  hintText: "Entrer l'id de la carte d'identité",
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Valider',
+                style: makeTextStyleWith(
+                  textfontSize: 18,
+                  textfontWeight: FontWeight.w500,
+                  textColor: boxdarknessBlack,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'Annuler',
+                style: makeTextStyleWith(
+                  textfontSize: 18,
+                  textfontWeight: FontWeight.w500,
+                  textColor: Colors.red,
+                ),
+              ),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  setModePaiement(context) {
+    // Affiche un loader dans un AlertDialog
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            'Mode de paiement',
+            style: makeTextStyleWith(
+              textfontSize: 18,
+              textfontWeight: FontWeight.w600,
+              textColor: boxdarknessBlack,
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextFormField(
+                keyboardType: TextInputType.text,
+                style: makeTextStyleWith(
+                  textfontSize: 15,
+                  textfontWeight: FontWeight.w400,
+                  textColor: boxdarknessBlack,
+                ),
+                decoration: const InputDecoration(
+                  hintText: "Entrer votre mode de paiement",
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Valider',
+                style: makeTextStyleWith(
+                  textfontSize: 18,
+                  textfontWeight: FontWeight.w500,
+                  textColor: boxdarknessBlack,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'Annuler',
+                style: makeTextStyleWith(
+                  textfontSize: 18,
+                  textfontWeight: FontWeight.w500,
+                  textColor: Colors.red,
+                ),
+              ),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  void makeActionOf(context, index) {
+    switch (index) {
+      case 0:
+        setPersonalEmail(context);
+        break;
+
+      case 1:
+        setPassword(context);
+        break;
+
+      case 2:
+        setIdCart(context);
+        break;
+
+      case 3:
+        setModePaiement(context);
+        break;
+
+      default:
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +379,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
               child: Container(
                 color: const Color(0xFFD9D9D9),
                 clipBehavior: Clip.none,
-                height: 350,
+                height: 290,
                 width: double.infinity,
               ),
             ),
@@ -42,7 +388,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
               child: Container(
                 color: boxGoldenPrimary,
                 clipBehavior: Clip.none,
-                height: 300,
+                height: 260,
                 width: double.infinity,
                 child: Column(
                   children: [
@@ -59,7 +405,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                       ),
                     ),
                     Container(
-                      height: 140,
+                      height: 100,
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Row(
                         children: [
@@ -76,27 +422,29 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  "Evrajody Gildas",
-                                  style: makeTextStyleWith(
-                                    textfontSize: 22,
-                                    textfontWeight: FontWeight.w500,
-                                    textColor: boxWhiteness,
-                                  ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "John Doe",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: makeTextStyleWith(
+                                        textfontSize: 22,
+                                        textfontWeight: FontWeight.w500,
+                                        textColor: boxWhiteness,
+                                      ),
+                                    ),
+                                    TextButton(
+                                      onPressed: () => setProfileInfos(context),
+                                      child: const Icon(
+                                        Icons.edit_outlined,
+                                        color: boxWhiteness,
+                                        size: 18.0,
+                                      ),
+                                    )
+                                  ],
                                 ),
-                                const SizedBox(height: 5),
                                 Text(
                                   "+229 61734777",
-                                  style: makeTextStyleWith(
-                                    textfontSize: 19,
-                                    textfontWeight: FontWeight.w500,
-                                    textColor: boxWhiteness,
-                                  ),
-                                ),
-                                const SizedBox(height: 5),
-                                Text(
-                                  "ekammianmichael@gmail.com",
-                                  overflow: TextOverflow.ellipsis,
                                   style: makeTextStyleWith(
                                     textfontSize: 19,
                                     textfontWeight: FontWeight.w500,
@@ -117,7 +465,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
           children: [
             ...List.generate(
@@ -135,14 +483,21 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                     textfontWeight: FontWeight.w500,
                   ),
                 ),
-                onTap: () {},
+                subtitle: Text(
+                  profileConfig[index]["value"],
+                  style: makeTextStyleWith(
+                    textfontSize: 14,
+                    textfontWeight: FontWeight.w400,
+                  ),
+                ),
+                onTap: () => makeActionOf(context, index),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 15),
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(
-                vertical: 30,
+                vertical: 25,
                 horizontal: 20,
               ),
               decoration: BoxDecoration(
@@ -183,7 +538,6 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                       )
                     ],
                   ),
-                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
