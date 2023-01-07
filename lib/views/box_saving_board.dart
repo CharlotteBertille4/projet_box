@@ -87,9 +87,9 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               decoration: const BoxDecoration(
                 color: boxGray,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(60),
-                ),
+                // borderRadius: BorderRadius.only(
+                //   topLeft: Radius.circular(60),
+                // ),
               ),
               child: Stack(
                 clipBehavior: Clip.none,
@@ -165,7 +165,8 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                     left: MediaQuery.of(context).size.width - 280,
                     child: InkWell(
                       onTap: () {
-                        // TODO IMPLEMENTER UN ACTION DE DÉPOT VERS LA CAISSE
+                        // TODO IMPLEMENTER UNE ACTION DE DÉPOT D'ARGENT
+                        // VERS LA CAISSE SELECTIONNÉE
                       },
                       child: Container(
                         height: 60,

@@ -84,7 +84,7 @@ class BoxUserNameSurname extends StatelessWidget {
                   onPressed: () => {
                     if (form_1.currentState!.validate())
                       {
-                        //TODO: GESTION DU FORMULAIRE
+                        //TODO: GESTION DU FORMULAIRE NIVEAU 1
                         nextFormHandler(),
                       }
                   },

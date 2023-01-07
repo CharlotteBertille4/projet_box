@@ -12,7 +12,8 @@ class BoxConnexion extends StatefulWidget {
 }
 
 class _BoxConnexionState extends State<BoxConnexion> {
-  // Accessoirement la fonction asynchrone d'authentification
+  // Accessoirement la fonction asynchrone pour lancer
+  //les requettes d'authentification
   // Puis de redirection vers la page principale
   void loaderAndRedirect(context) async {
     // Affiche un loader dans un AlertDialog
@@ -115,6 +116,7 @@ class _BoxConnexionState extends State<BoxConnexion> {
               children: [
                 Expanded(
                   child: ElevatedButton(
+                    // TODO: IMPLEMENTER LA REQUETE D'AUTHENTIFICATION
                     onPressed: () => loaderAndRedirect(context),
                     child: Text(
                       "Se connecter",

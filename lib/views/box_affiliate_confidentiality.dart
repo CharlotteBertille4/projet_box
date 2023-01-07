@@ -115,9 +115,11 @@ class _BoxAffilateConfidentialityState
                     Checkbox(
                       value: confidentialCondAccepted,
                       onChanged: (val) {
-                        setState(() {
-                          confidentialCondAccepted = val;
-                        });
+                        setState(
+                          () {
+                            confidentialCondAccepted = val;
+                          },
+                        );
                       },
                     ),
                     Text(

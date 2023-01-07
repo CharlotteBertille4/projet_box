@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:projet_box/constants/helpers.dart';
+import 'package:projet_box/views/box_frequence.dart';
 
 class BoxCreateInterface extends StatefulWidget {
   const BoxCreateInterface({super.key});
@@ -135,6 +136,13 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                 onTap: () {
                   // Rediriger vers l'interface de selection
                   // de frequence pour une caisse
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      fullscreenDialog: true,
+                      builder: (context) => const BoxFrequence(),
+                    ),
+                  );
                 },
                 readOnly: true,
                 decoration: const InputDecoration(

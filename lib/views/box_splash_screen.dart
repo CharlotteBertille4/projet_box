@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:projet_box/views/box_intro.dart';
 import 'package:projet_box/constants/helpers.dart';
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:projet_box/views/box_auth_side.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 class BoxSplashScreen extends StatefulWidget {
   const BoxSplashScreen({super.key});
@@ -28,7 +28,7 @@ class _BoxSplashScreenState extends State<BoxSplashScreen> {
           ),
         ],
       ),
-      nextScreen: const BoxAuthSide(),
+      nextScreen: const BoxIntro(),
       splashIconSize: 150,
       duration: 3000,
       backgroundColor: boxGoldenPrimary,

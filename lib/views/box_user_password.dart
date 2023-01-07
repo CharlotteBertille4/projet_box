@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:projet_box/constants/helpers.dart';
-import 'package:projet_box/screens/box_home.dart';
 import 'package:projet_box/widgets/dot_indicator.dart';
 import 'package:projet_box/widgets/no_account.dart';
 
@@ -90,7 +89,7 @@ class BoxUserPassword extends StatelessWidget {
             children: [
               Expanded(
                 child: ElevatedButton(
-                  // Une interface d'OTP avant le home
+                  // Une interface d'OTP avant le Home
                   // Anonce de l'ID de l'utilisateur
                   onPressed: () {
                     nextFormHandler();

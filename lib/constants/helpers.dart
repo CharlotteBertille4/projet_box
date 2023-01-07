@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:form_validator/form_validator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projet_box/gen/assets.gen.dart';
+import 'package:projet_box/widgets/on_board_content.dart';
 
 ///
 /// La date de début de cotisation ne peut depassé la date courante
@@ -9,8 +10,8 @@ import 'package:projet_box/gen/assets.gen.dart';
 ///  dureeEpargne = dateFin - DateDebut (seconde)
 ///  progression = = %des seconde ecoulé dans la durée d'épargne
 
-
-// Creating my custom material color
+// COULEUR PRINCIPALE DE BASE
+// MATERIAL DU COULEUR DE BASE
 const Map<int, Color> boxGoldenShades = {
   50: Color.fromRGBO(188, 138, 26, .1),
   100: Color.fromRGBO(188, 138, 26, .2),
@@ -29,6 +30,7 @@ MaterialColor boxGoldenPrimary = const MaterialColor(
   boxGoldenShades,
 );
 
+// RADIANT DE L'INTERFACE D'INTRO
 RadialGradient boxRad = const RadialGradient(
   center: Alignment(0.003, -0.44),
   radius: 0.66,
@@ -36,18 +38,19 @@ RadialGradient boxRad = const RadialGradient(
   stops: <double>[0, 0.507],
 );
 
+// RADIANT DU BOUTTON FLOTTANT D'AJOUT DE CAISSE
 LinearGradient floatingBtnGradient = const LinearGradient(
   begin: Alignment(0, -1),
   end: Alignment(0, 1),
   colors: <Color>[Color(0xffbc8a1a), Color(0xd3ffdd92)],
   stops: <double>[0, 1],
 );
-// Les variable globales utilisées au les interfaces
-// Les dimensions de la maquettes
 
+// DIMENSIONS RELLES DE MAQUETTES FIGMA
 const mockupHeight = 812;
 const mockupWidth = 375;
 
+// ETAPES DES FORMULAIRES
 const steps = 5;
 
 // Les code couleurs
@@ -62,10 +65,8 @@ const Color boxLineSeparatorBack = Color(0xFF222222);
 const Color boxLineSeparatorGrey = Color(0xFF222222);
 Color boxtranslucideGoldenPrimary = const Color(0xFFFFC600).withOpacity(0.2);
 
-// Les gradients
-
+// GRADIENTS ACCESSOIRES
 // linear-gradient(269.97deg, #222222 4.18%, rgba(196, 196, 196, 0) 77.28%);
-
 LinearGradient rightLineBg = const LinearGradient(
   colors: [
     boxLineSeparatorBack,
@@ -105,8 +106,8 @@ RadialGradient eggContainerGradient = const RadialGradient(
     Color.fromARGB(15, 12, 10, 32),
   ],
 );
-// Les Typographies de police et parametrages
 
+// Les Typographies de police et parametrages
 TextStyle makeTextStyleWith({
   String fontFamily = 'Outfit',
   double? textfontSize,
@@ -121,6 +122,35 @@ TextStyle makeTextStyleWith({
     color: textColor,
   );
 }
+
+TextStyle boxOnBoringThemeFont = GoogleFonts.dosis(
+  fontSize: 24,
+  fontStyle: FontStyle.normal,
+  fontWeight: FontWeight.w600,
+  color: Colors.white,
+  letterSpacing: -0.005,
+);
+
+TextStyle backTextFont = GoogleFonts.dosis(
+  fontSize: 20,
+  fontStyle: FontStyle.normal,
+  fontWeight: FontWeight.w400,
+  color: Colors.white,
+);
+
+TextStyle loginTextFont = GoogleFonts.outfit(
+  fontSize: 25,
+  fontStyle: FontStyle.normal,
+  fontWeight: FontWeight.w600,
+  color: Colors.black,
+);
+
+TextStyle loginsubTextFont = GoogleFonts.outfit(
+  fontSize: 18,
+  fontStyle: FontStyle.normal,
+  fontWeight: FontWeight.w400,
+  color: Colors.black,
+);
 
 ThemeData boxAppThemeData = ThemeData(
   fontFamily: "Outfit",
@@ -190,6 +220,7 @@ ThemeData boxAppThemeData = ThemeData(
   ),
 );
 
+// LISTE DES CHOIX DE SEXE
 List<DropdownMenuItem<Object>> choicesSexeList = [
   const DropdownMenuItem(
     value: "Homme",
@@ -244,8 +275,37 @@ List<DropdownMenuItem<String>> typeCaisse = [
     ),
   ),
 ];
-// Register user validate rules
 
+final List<BoxOnboardContent> boxOnboardContentData = [
+  const BoxOnboardContent(
+    image: 'assets/images/box-logo.png',
+    description: 'BOX la caisse mobile',
+  ),
+  const BoxOnboardContent(
+    image: 'assets/images/epargne-secu.png',
+    description: 'Épargnez de façon simple et sécurisée',
+  ),
+  const BoxOnboardContent(
+    image: 'assets/images/demarrer-epargne.png',
+    description:
+        'Créez une caisse mobile et démarrez une épargne à votre rythme',
+  ),
+  const BoxOnboardContent(
+    image: 'assets/images/planifier-epargne.png',
+    description: "Programmez la date et l'heure de fin de votre épargne",
+  ),
+  const BoxOnboardContent(
+    image: 'assets/images/recup-epargne.png',
+    description: 'Rentrez en possession de vos épargne à la fin du délai',
+  ),
+  const BoxOnboardContent(
+    image: 'assets/images/box-account-init.png',
+    description:
+        'Dépôt et retrait rapide et sécurisé via MTN MONEY et MOOV MONEY',
+  )
+];
+
+// Register user validate rules
 final form_1 = GlobalKey<FormState>();
 final form_2 = GlobalKey<FormState>();
 final form_3 = GlobalKey<FormState>();
@@ -388,3 +448,50 @@ RadialGradient rader = const RadialGradient(
     Color(0xFF07051C),
   ],
 );
+
+// BoxAlternate Menue de navigation
+List navigtionMenu = [
+  {"label": "Accueil", "icon": const Icon(Icons.home_filled)},
+  {"label": "Caisse", "icon": const Icon(Icons.wallet)},
+  {"label": "Historique", "icon": const Icon(Icons.article)},
+  {"label": "Profile", "icon": const Icon(Icons.person)},
+];
+
+// Liste des elements dans le choix de la fréquence
+
+List<Widget> setFrequenceDataStringed = [
+  Center(
+    child: Text(
+      "Quotidien",
+      style: loginTextFont,
+    ),
+  ),
+  Center(
+    child: Text(
+      "Hebdomadaire",
+      style: loginTextFont,
+    ),
+  ),
+  Center(
+    child: Text(
+      "Mensuel",
+      style: loginTextFont,
+    ),
+  )
+];
+
+List<String> frequences = const <String>[
+  'Quotidien',
+  'Hebdomadaire',
+  'Mensuel',
+];
+
+List<String> days = const <String>[
+  'dimanche',
+  'Lundi',
+  'Mardi',
+  'Mercredi',
+  'Jeudi',
+  'Vendredi',
+  'Samedi',
+];
