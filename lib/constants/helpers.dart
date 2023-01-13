@@ -486,12 +486,12 @@ List<String> frequences = const <String>[
   'Mensuel',
 ];
 
-List<String> days = const <String>[
-  'dimanche',
-  'Lundi',
-  'Mardi',
-  'Mercredi',
-  'Jeudi',
-  'Vendredi',
-  'Samedi',
+List frequencyParams = [
+  {"day": "Dimanche", "saveThatDay": true},
+  {"day": "Lundi", "saveThatDay": true},
+  {"day": "Mardi", "saveThatDay": false},
+  {"day": "Mercredi", "saveThatDay": false},
+  {"day": "Jeudi", "saveThatDay": true},
+  {"day": "Vendredi", "saveThatDay": true},
+  {"day": "Samedi", "saveThatDay": false},
 ];

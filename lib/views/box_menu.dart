@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projet_box/constants/helpers.dart';
 import 'package:projet_box/gen/assets.gen.dart';
+import 'package:projet_box/views/box_commercial_account.dart';
 import 'package:projet_box/views/box_transactions_history.dart';
 
 class BoxMenu extends StatelessWidget {
@@ -12,7 +13,7 @@ class BoxMenu extends StatelessWidget {
   void makeActionOf(int index, context) {
     switch (index) {
       case 0:
-        debugPrint("AFFICHAGE DE L'HISTORIQUE");
+        // debugPrint("AFFICHAGE DE L'HISTORIQUE");
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -38,7 +39,14 @@ class BoxMenu extends StatelessWidget {
         break;
 
       case 5:
-        debugPrint("AFFICHAGE DU COMPTE COMMERCIALE");
+        // debugPrint("AFFICHAGE DU COMPTE COMMERCIALE");
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const BoxCommercialAccount(),
+          ),
+        );
+
         break;
 
       case 6:

@@ -58,7 +58,7 @@ class _BoxFrequenceState extends State<BoxFrequence> {
                           List<Widget>.generate(frequences.length, (int index) {
                         return Center(
                           child: Text(
-                            frequences[index],
+                            frequences.elementAt(index),
                             style: makeTextStyleWith(
                               textfontSize: 24,
                               textfontWeight: FontWeight.w500,
@@ -168,10 +168,10 @@ class _BoxFrequenceState extends State<BoxFrequence> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: List.generate(
-                  days.length,
+                  frequencyParams.length,
                   (index) => ListTile(
                     title: Text(
-                      days[index],
+                      frequencyParams.elementAt(index)['day'],
                       style: makeTextStyleWith(
                         textfontSize: 22,
                         textfontWeight: FontWeight.w400,
@@ -179,11 +179,12 @@ class _BoxFrequenceState extends State<BoxFrequence> {
                       ),
                     ),
                     trailing: Checkbox(
-                      value: false,
+                      value: frequencyParams.elementAt(index)['saveThatDay'],
                       onChanged: (val) {
                         setState(() {
-                          // TODO: Implementer l'action pour activer le/les jours
-                          // Définit par l'utilisateur
+                          // Met à jour le state du jour
+                          // Défini si c'est un jour d'épargne
+                          frequencyParams.elementAt(index)['saveThatDay'] = val;
                         });
                       },
                     ),
