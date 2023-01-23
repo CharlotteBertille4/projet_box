@@ -42,7 +42,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                       "Utilisez box, épargnez, partagez l'applis avec vos amis et gagner des commissions supplémentaires",
                       textAlign: TextAlign.center,
                       style: makeTextStyleWith(
-                        textfontSize: 20,
+                        textfontSize: 18,
                         textfontWeight: FontWeight.w400,
                         textColor: boxWhiteness,
                       ),
@@ -90,7 +90,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                           label: Text(
                             "1500 FCFA",
                             style: makeTextStyleWith(
-                              textfontSize: 20,
+                              textfontSize: 18,
                               textfontWeight: FontWeight.w600,
                               textColor: boxdarknessBlack,
                             ),
@@ -105,7 +105,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
           ),
         ),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.only(top: 75, left: 15, right: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,7 +145,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                 subtitle: Text(
                   "Code de parainage",
                   style: makeTextStyleWith(
-                    textfontSize: 16,
+                    textfontSize: 14,
                     textfontWeight: FontWeight.w400,
                     textColor: boxdarknessBlack,
                   ),
@@ -156,7 +156,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                   label: Text(
                     "Copier",
                     style: makeTextStyleWith(
-                      textfontSize: 16,
+                      textfontSize: 14,
                       textfontWeight: FontWeight.w500,
                       textColor: boxdarknessBlack,
                     ),
@@ -183,7 +183,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                 title: Text(
                   " - ",
                   style: makeTextStyleWith(
-                    textfontSize: 18,
+                    textfontSize: 16,
                     textfontWeight: FontWeight.w500,
                     textColor: boxdarknessBlack,
                   ),
@@ -191,7 +191,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                 subtitle: Text(
                   "Lien de partage",
                   style: makeTextStyleWith(
-                    textfontSize: 16,
+                    textfontSize: 14,
                     textfontWeight: FontWeight.w400,
                     textColor: boxdarknessBlack,
                   ),
@@ -202,7 +202,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                   label: Text(
                     "Partager",
                     style: makeTextStyleWith(
-                      textfontSize: 16,
+                      textfontSize: 14,
                       textfontWeight: FontWeight.w500,
                       textColor: boxdarknessBlack,
                     ),
@@ -242,7 +242,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                   title: Text(
                     "Listes des parainnées",
                     style: makeTextStyleWith(
-                      textfontSize: 18,
+                      textfontSize: 16,
                       textfontWeight: FontWeight.w400,
                       textColor: boxdarknessBlack,
                     ),
@@ -250,7 +250,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                   subtitle: Text(
                     "12 parainné(e)s",
                     style: makeTextStyleWith(
-                      textfontSize: 16,
+                      textfontSize: 14,
                       textfontWeight: FontWeight.w400,
                       textColor: boxdarknessBlack,
                     ),
@@ -279,7 +279,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                     child: Text(
                       "Retirer ma commission",
                       style: makeTextStyleWith(
-                        textfontSize: 20,
+                        textfontSize: 18,
                         textfontWeight: FontWeight.w600,
                         textColor: boxdarknessBlack,
                       ),

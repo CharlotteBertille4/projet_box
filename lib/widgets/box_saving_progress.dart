@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:projet_box/constants/helpers.dart';
@@ -15,7 +16,7 @@ class BoxSavingProgress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+      padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 30.h),
       child: Column(
         children: [
           CircularPercentIndicator(
@@ -36,7 +37,7 @@ class BoxSavingProgress extends StatelessWidget {
                   : Assets.images.oeuf.image(scale: 1.2),
             ),
           ),
-          const SizedBox(height: 25),
+          SizedBox(height: 25.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -51,7 +52,7 @@ class BoxSavingProgress extends StatelessWidget {
                 "20:02:04",
                 // (savingNotifyer.value).toString(),
                 style: GoogleFonts.outfit(
-                  fontSize: 30,
+                  fontSize: 30.sp,
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.w500,
                   color: boxWhiteness,
@@ -59,7 +60,7 @@ class BoxSavingProgress extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 30),
+          SizedBox(height: 30.h),
         ],
       ),
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:projet_box/constants/helpers.dart';
+import 'package:projet_box/views/box_auth.dart';
 import 'package:projet_box/views/box_login.dart';
 import 'package:projet_box/views/box_register.dart';
 
@@ -30,14 +32,14 @@ class NoAccount extends StatelessWidget {
             textfontWeight: FontWeight.normal,
           ),
         ),
-        const SizedBox(width: 2),
+        SizedBox(width: 2.w),
         TextButton(
           onPressed: () => {
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                    isLogin ? const BoxRegister() : const BoxConnexion(),
+                    isLogin ? const BoxRegister() : const BoxAuth(),
               ),
             ),
           },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:projet_box/constants/helpers.dart';
 import 'package:projet_box/views/box_affiliate_confidentiality.dart';
 import 'package:projet_box/views/box_number_job.dart';
@@ -6,6 +7,7 @@ import 'package:projet_box/views/box_sex_birthday.dart';
 import 'package:projet_box/views/box_user_name_surname.dart';
 import 'package:projet_box/views/box_user_password.dart';
 import 'package:projet_box/widgets/box_custom_bar.dart';
+import 'package:projet_box/widgets/box_oval_motif_paint.dart';
 
 class BoxRegister extends StatefulWidget {
   const BoxRegister({super.key});
@@ -53,19 +55,19 @@ class _BoxRegisterState extends State<BoxRegister> {
 
   @override
   Widget build(BuildContext context) {
-    final deviceWith = MediaQuery.of(context).size.width;
-    // final scalewidth = mockupWidth / deviceWith;
-    final textscaleFactor = deviceWith / mockupWidth;
+    //  final deviceWith = MediaQuery.of(context).size.width;
+    // // final scalewidth = mockupWidth / deviceWith;
+    // final textscaleFactor = deviceWith / mockupWidth;
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromRadius(100),
-        child: CustomAppBar(
-          textscaleFactor: textscaleFactor,
-          prevFormHandle: displayPrevForm,
-          haveBackBtn: (pageIndex > 0),
-          label: "Inscription",
-        ),
-      ),
+      // appBar: PreferredSize(
+      //   preferredSize: Size.fromRadius(100.h),
+      //   child: CustomAppBar(
+      //     textscaleFactor: textscaleFactor,
+      //     prevFormHandle: displayPrevForm,
+      //     haveBackBtn: (pageIndex > 0),
+      //     label: "Inscription",
+      //   ),
+      // ),
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,

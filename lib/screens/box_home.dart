@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet_box/constants/helpers.dart';
+import 'package:projet_box/views/box_main.dart';
 import 'package:projet_box/views/box_saving_board.dart';
 import 'package:projet_box/views/box_user_profile.dart';
 import 'package:projet_box/widgets/box_custombottombar.dart';
@@ -56,7 +57,7 @@ class _BoxHomeState extends State<BoxHome> {
           pageIndex = value;
         }),
         children: const [
-          BoxSavingBoard(),
+          BoxMain(),
           BoxUserProfile(),
         ],
       ),

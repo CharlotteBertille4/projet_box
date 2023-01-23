@@ -1,30 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:projet_box/constants/helpers.dart';
-import 'package:projet_box/views/box_login.dart';
+import 'package:projet_box/views/box_auth.dart';
 import 'package:projet_box/views/box_register.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:projet_box/views/box_user_register.dart';
 
 class BoxAuthSide extends StatelessWidget {
   const BoxAuthSide({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final deviceWith = MediaQuery.of(context).size.width;
-    final scalewidth = mockupWidth / deviceWith;
-    final textscaleFactor = deviceWith / mockupWidth;
+    final deviceWidth = MediaQuery.of(context).size.width;
+    final scalewidth = mockupWidth / deviceWidth;
+    final textscaleFactor = deviceWidth / mockupWidth;
 
     return Scaffold(
       body: SingleChildScrollView(
-        padding: const EdgeInsets.only(top: 8, left: 10, right: 10),
+        padding: EdgeInsets.only(top: 8.h, left: 10.w, right: 10.w),
         child: Column(
           children: [
             Container(
-              height: 391,
-              padding: const EdgeInsets.symmetric(
-                vertical: 60,
-                horizontal: 50,
+              height: 400.h,
+              width: 350.w,
+              padding: EdgeInsets.symmetric(
+                vertical: 60.h,
+                horizontal: 50.w,
               ),
               decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(50)),
+                borderRadius: BorderRadius.all(Radius.circular(50.r)),
                 gradient: zenContainerRadient,
               ),
               child: Image.asset(
@@ -33,26 +37,26 @@ class BoxAuthSide extends StatelessWidget {
                 width: double.infinity,
               ),
             ),
-            const SizedBox(height: 18),
+            SizedBox(height: 19.h),
             Text(
               "BOX",
               textScaleFactor: textscaleFactor,
               style: Theme.of(context).textTheme.bodyLarge,
             ),
-            const SizedBox(height: 5),
+            SizedBox(height: 3.h),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 23),
+              margin: EdgeInsets.symmetric(horizontal: 23.w),
               child: Text(
                 "Au coeur de vos economies",
-                textScaleFactor: textscaleFactor,
                 textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge
-                    ?.merge(const TextStyle(color: boxtranslucideBlack)),
+                style: GoogleFonts.outfit(
+                  fontSize: 30.sp,
+                  fontWeight: FontWeight.w700,
+                  color: boxtranslucideBlack,
+                ),
               ),
             ),
-            const SizedBox(height: 32),
+            SizedBox(height: 24.h),
             Row(
               children: [
                 Expanded(
@@ -61,25 +65,28 @@ class BoxAuthSide extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const BoxConnexion(),
+                          builder: (context) => const BoxAuth(),
                         ),
                       ),
                     },
                     style: ElevatedButton.styleFrom(
-                      fixedSize: const Size.fromHeight(65),
+                      fixedSize: Size.fromHeight(65.h),
                       //backgroundColor: boxGoldenPrimary,
-                      padding: const EdgeInsets.symmetric(vertical: 19),
-                      shape: const RoundedRectangleBorder(
+                      padding: EdgeInsets.symmetric(vertical: 19.h),
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          bottomLeft: Radius.circular(15),
+                          topLeft: Radius.circular(15.r),
+                          bottomLeft: Radius.circular(15.r),
                         ),
                       ),
                     ),
                     child: Text(
                       "Se connecter",
-                      textScaleFactor: textscaleFactor,
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: GoogleFonts.outfit(
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w700,
+                        color: boxdarknessBlack,
+                      ),
                     ),
                   ),
                 ),
@@ -95,35 +102,34 @@ class BoxAuthSide extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: boxdarknessBlack,
-                      fixedSize: const Size.fromHeight(65),
-                      shape: const RoundedRectangleBorder(
+                      fixedSize: Size.fromHeight(65.h),
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(15),
-                          bottomRight: Radius.circular(15),
+                          topRight: Radius.circular(15.r),
+                          bottomRight: Radius.circular(15.r),
                         ),
                       ),
                       // backgroundColor: boxdarknessBlack,
-                      padding: const EdgeInsets.symmetric(vertical: 19),
+                      padding: EdgeInsets.symmetric(vertical: 19.h),
                     ),
                     child: Text(
                       "S'inscrire",
-                      textScaleFactor: textscaleFactor,
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelMedium
-                          ?.merge(const TextStyle(color: boxWhiteness)),
+                      style: GoogleFonts.outfit(
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 5),
+            SizedBox(height: 25.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Expanded(
                   child: Container(
-                    height: 3,
+                    height: 3.h,
                     decoration: BoxDecoration(
                       gradient: leftLineBg,
                     ),
@@ -134,12 +140,16 @@ class BoxAuthSide extends StatelessWidget {
                   child: Text(
                     "Mot de passe oublié ? ",
                     textScaleFactor: textscaleFactor,
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: GoogleFonts.outfit(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                      color: boxtranslucideBlack,
+                    ),
                   ),
                 ),
                 Expanded(
                   child: Container(
-                    height: 3,
+                    height: 3.h,
                     decoration: BoxDecoration(
                       gradient: rightLineBg,
                     ),

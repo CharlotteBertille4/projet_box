@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projet_box/constants/helpers.dart';
 import 'package:projet_box/gen/assets.gen.dart';
 import 'package:projet_box/views/box_commercial_account.dart';
+import 'package:projet_box/views/box_create_interface.dart';
 import 'package:projet_box/views/box_transactions_history.dart';
 
 class BoxMenu extends StatelessWidget {
@@ -23,7 +24,12 @@ class BoxMenu extends StatelessWidget {
         break;
 
       case 1:
-        debugPrint("CREATION DE LA CAISSE");
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const BoxCreateInterface(),
+          ),
+        );
         break;
 
       case 2:
@@ -138,6 +144,7 @@ class BoxMenu extends StatelessWidget {
                           menuConfig[index]['icon'],
                           Text(
                             menuConfig[index]['label'],
+                            textAlign: TextAlign.center,
                             style: makeTextStyleWith(
                               fontFamily: 'Inter',
                               textfontSize: 15,

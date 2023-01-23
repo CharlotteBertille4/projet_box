@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:projet_box/constants/helpers.dart';
+import 'package:projet_box/gen/assets.gen.dart';
 import 'package:projet_box/screens/box_home.dart';
+import 'package:projet_box/widgets/box_custom_bar.dart';
+import 'package:projet_box/widgets/box_oval_motif_paint.dart';
 import 'package:projet_box/widgets/dot_indicator.dart';
 import 'package:projet_box/widgets/no_account.dart';
 
@@ -31,8 +35,8 @@ class _BoxAffilateConfidentialityState
 
   @override
   Widget build(BuildContext context) {
-    final deviceWith = MediaQuery.of(context).size.width;
-    final textscaleFactor = deviceWith / mockupWidth;
+    // final deviceWith = MediaQuery.of(context).size.width;
+    // final textscaleFactor = deviceWith / mockupWidth;
 
     // Accessoirement la fonction asynchrone d'authentification
     // Puis de redirection vers la page principale
@@ -70,95 +74,106 @@ class _BoxAffilateConfidentialityState
 
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.only(top: 26, left: 22, right: 22),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ...List.generate(
-                steps,
-                (index) => Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: DotIndicator(
-                    isActive: index == widget.currentPageIndex,
-                    height: 10,
-                    width: 29,
-                    customColor: boxdarknessBlack,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 25),
-          Form(
-            key: form_5,
-            child: Column(
+      padding: const EdgeInsets.only(left: 26, right: 26, top: 45),
+      child: CustomPaint(
+        painter: BoxOvalMotifPaint(),
+        child: Column(
+          children: [
+            CustomAppBar(
+              textscaleFactor: 1,
+              label: 'Inscription',
+              haveBackBtn: true,
+              prevFormHandle: () {},
+            ),
+            Assets.images.boxLogoName.image(height: 150.h, scale: 2.1),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextFormField(
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  controller: formConfig["codeParrainage"]["controller"],
-                  validator: formConfig["codeParrainage"]["rule"],
-                  keyboardType: TextInputType.number,
-                  style: makeTextStyleWith(
-                    textfontSize: 15,
-                    textfontWeight: FontWeight.w400,
-                    textColor: boxdarknessBlack,
-                  ),
-                  decoration: const InputDecoration(
-                    hintText: "Code de parrainage",
+                ...List.generate(
+                  steps,
+                  (index) => Padding(
+                    padding: EdgeInsets.only(left: 10.w),
+                    child: DotIndicator(
+                      isActive: index == widget.currentPageIndex,
+                      height: 10,
+                      width: 29,
+                      customColor: boxdarknessBlack,
+                    ),
                   ),
                 ),
-                const SizedBox(height: 10),
-                Row(
-                  children: [
-                    Checkbox(
-                      value: confidentialCondAccepted,
-                      onChanged: (val) {
-                        setState(
-                          () {
-                            confidentialCondAccepted = val;
-                          },
-                        );
-                      },
+              ],
+            ),
+            SizedBox(height: 40.h),
+            Form(
+              key: form_5,
+              child: Column(
+                children: [
+                  TextFormField(
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    controller: formConfig["codeParrainage"]["controller"],
+                    validator: formConfig["codeParrainage"]["rule"],
+                    keyboardType: TextInputType.number,
+                    style: makeTextStyleWith(
+                      textfontSize: 15.sp,
+                      textfontWeight: FontWeight.w400,
+                      textColor: boxdarknessBlack,
                     ),
-                    Text(
-                      "Accepter les conditions de confidentialités",
-                      style: makeTextStyleWith(
-                        fontFamily: "Outfit",
-                        textfontSize: 15,
+                    decoration: const InputDecoration(
+                      hintText: "Code de parrainage",
+                    ),
+                  ),
+                  SizedBox(height: 30.h),
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: confidentialCondAccepted,
+                        onChanged: (val) {
+                          setState(
+                            () {
+                              confidentialCondAccepted = val;
+                            },
+                          );
+                        },
                       ),
+                      Expanded(
+                        child: Text(
+                          "Accepter les conditions de confidentialités",
+                          style: makeTextStyleWith(
+                            fontFamily: "Outfit",
+                            textfontSize: 13,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 30.h),
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    // Une interface d'OTP avant l'interface principale
+                    // Annonce de l'ID de l'utilisateur
+                    onPressed: () => loaderAndRedirect(context),
+                    child: Text(
+                      "S'inscrire",
+                      style: Theme.of(context).textTheme.labelMedium,
                     ),
-                  ],
+                  ),
                 )
               ],
             ),
-          ),
-          const SizedBox(height: 10),
-          Row(
-            children: [
-              Expanded(
-                child: ElevatedButton(
-                  // Une interface d'OTP avant l'interface principale
-                  // Annonce de l'ID de l'utilisateur
-                  onPressed: () => loaderAndRedirect(context),
-                  child: Text(
-                    "S'inscrire",
-                    textScaleFactor: textscaleFactor,
-                    style: Theme.of(context).textTheme.labelMedium,
-                  ),
-                ),
-              )
-            ],
-          ),
-          const SizedBox(height: 15),
-          NoAccount(
-            isLogin: false,
-            textscaleFactor: textscaleFactor,
-            firstText: "Déja un compte ?",
-            secondText: "Connectez-vous",
-          ),
-        ],
+            SizedBox(height: 15.h),
+            const NoAccount(
+              isLogin: false,
+              textscaleFactor: 1,
+              firstText: "Déja un compte ?",
+              secondText: "Connectez-vous",
+            ),
+          ],
+        ),
       ),
     );
   }

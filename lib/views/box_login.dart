@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:projet_box/screens/box_home.dart';
 import 'package:projet_box/constants/helpers.dart';
 import 'package:projet_box/widgets/no_account.dart';
@@ -49,11 +50,11 @@ class _BoxConnexionState extends State<BoxConnexion> {
 
   @override
   Widget build(BuildContext context) {
-    final deviceWith = MediaQuery.of(context).size.width;
-    final textscaleFactor = deviceWith / mockupWidth;
+    final deviceWidth = MediaQuery.of(context).size.width;
+    final textscaleFactor = deviceWidth / mockupWidth;
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromRadius(100),
+        preferredSize: Size.fromRadius(100.h),
         child: CustomAppBar(
           textscaleFactor: textscaleFactor,
           prevFormHandle: () {},
@@ -63,7 +64,7 @@ class _BoxConnexionState extends State<BoxConnexion> {
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.only(top: 45, left: 22, right: 22),
+        padding: EdgeInsets.only(top: 51.h, left: 22.w, right: 22.w),
         child: Column(
           children: [
             Form(
@@ -72,7 +73,7 @@ class _BoxConnexionState extends State<BoxConnexion> {
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     style: makeTextStyleWith(
-                      textfontSize: 15,
+                      textfontSize: 15.sp,
                       textfontWeight: FontWeight.w400,
                       textColor: boxdarknessBlack,
                     ),
@@ -80,7 +81,7 @@ class _BoxConnexionState extends State<BoxConnexion> {
                       hintText: "Entrez votre ID",
                     ),
                   ),
-                  const SizedBox(height: 15),
+                  SizedBox(height: 16.h),
                   TextFormField(
                     obscureText: true,
                     keyboardType: TextInputType.visiblePassword,
@@ -88,7 +89,7 @@ class _BoxConnexionState extends State<BoxConnexion> {
                       hintText: "Entrez votre mot de passe",
                     ),
                     style: makeTextStyleWith(
-                      textfontSize: 15,
+                      textfontSize: 15.sp,
                       textfontWeight: FontWeight.w400,
                       textColor: boxdarknessBlack,
                     ),
@@ -96,6 +97,7 @@ class _BoxConnexionState extends State<BoxConnexion> {
                 ],
               ),
             ),
+            SizedBox(height: 5.h),
             Row(
               children: [
                 const Spacer(),
@@ -104,14 +106,16 @@ class _BoxConnexionState extends State<BoxConnexion> {
                   child: Text(
                     "Mot de passe oublié ?",
                     textScaleFactor: textscaleFactor,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall
-                        ?.merge(const TextStyle(color: boxtranslucideBlack)),
+                    style: makeTextStyleWith(
+                      textfontSize: 12.sp,
+                      textfontWeight: FontWeight.w500,
+                      textColor: boxtranslucideBlack,
+                    ),
                   ),
                 )
               ],
             ),
+            SizedBox(height: 5.h),
             Row(
               children: [
                 Expanded(
@@ -121,13 +125,17 @@ class _BoxConnexionState extends State<BoxConnexion> {
                     child: Text(
                       "Se connecter",
                       textScaleFactor: textscaleFactor,
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: makeTextStyleWith(
+                        textfontSize: 22.sp,
+                        textfontWeight: FontWeight.w700,
+                        textColor: boxdarknessBlack,
+                      ),
                     ),
                   ),
                 )
               ],
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 33.h),
             NoAccount(
               isLogin: true,
               textscaleFactor: textscaleFactor,

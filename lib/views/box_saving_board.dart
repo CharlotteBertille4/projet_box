@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:projet_box/constants/helpers.dart';
@@ -84,7 +85,7 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
           Expanded(
             child: Container(
               width: MediaQuery.of(context).size.width,
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.symmetric(horizontal: 25.w),
               decoration: const BoxDecoration(
                 color: boxGray,
                 // borderRadius: BorderRadius.only(
@@ -95,14 +96,13 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                 clipBehavior: Clip.none,
                 children: [
                   Positioned(
-                    top: -50,
+                    top: -50.h,
                     child: Container(
-                      height: 150,
-                      width: MediaQuery.of(context).size.width - 50,
+                      height: 130.h,
+                      width: MediaQuery.of(context).size.width - 50.w,
                       decoration: BoxDecoration(
                         color: boxWhiteness,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(20)),
+                        borderRadius: BorderRadius.all(Radius.circular(20.r)),
                         boxShadow: [
                           BoxShadow(
                             color: boxdarknessBlack.withOpacity(0.25),
@@ -118,12 +118,12 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              const SizedBox(width: 20),
+                              SizedBox(width: 20.w),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 20,
-                                    vertical: 10,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20.w,
+                                    vertical: 10.h,
                                   ),
                                 ),
                                 onPressed: () {},
@@ -145,14 +145,14 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                                     "10 500 FCFA",
                                     overflow: TextOverflow.ellipsis,
                                     style: makeTextStyleWith(
-                                      textfontSize: 18,
+                                      textfontSize: 18.sp,
                                       textfontWeight: FontWeight.w600,
                                       textColor: boxdarknessBlack,
                                     ),
                                   ),
                                 ),
                               ),
-                              const SizedBox(width: 20),
+                              SizedBox(width: 20.w),
                             ],
                           )
                         ],
@@ -161,7 +161,7 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                   ),
                   Positioned(
                     bottom: 60,
-                    width: 150,
+                    width: 150.w,
                     left: MediaQuery.of(context).size.width - 280,
                     child: InkWell(
                       onTap: () {
@@ -192,7 +192,7 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                           child: Text(
                             "+ DEPOT",
                             style: makeTextStyleWith(
-                              textfontSize: 26,
+                              textfontSize: 26.sp,
                               textfontWeight: FontWeight.w600,
                               textColor: boxWhiteness,
                             ),

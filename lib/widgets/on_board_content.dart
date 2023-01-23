@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet_box/constants/helpers.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BoxOnboardContent extends StatelessWidget {
   const BoxOnboardContent({
@@ -13,20 +14,22 @@ class BoxOnboardContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        const Spacer(),
         Image.asset(
           image,
-          height: 250,
-          width: double.infinity,
+          height: 293.h,
+          width: 250.w,
         ),
-        const Spacer(),
-        Text(
-          description,
-          textAlign: TextAlign.center,
-          style: boxOnBoringThemeFont,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 32.w),
+          child: Text(
+            description,
+            textAlign: TextAlign.center,
+            maxLines: 3,
+            style: boxOnBoringThemeFont,
+          ),
         ),
-        const Spacer(),
       ],
     );
   }

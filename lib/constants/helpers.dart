@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_validator/form_validator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projet_box/gen/assets.gen.dart';
@@ -9,6 +10,7 @@ import 'package:projet_box/widgets/on_board_content.dart';
 ///  dureeEpargne = Nombre seconde séparant le debut et fin
 ///  dureeEpargne = dateFin - DateDebut (seconde)
 ///  progression = = %des seconde ecoulé dans la durée d'épargne
+/// 375 * 812
 
 // COULEUR PRINCIPALE DE BASE
 // MATERIAL DU COULEUR DE BASE
@@ -33,7 +35,7 @@ MaterialColor boxGoldenPrimary = const MaterialColor(
 // RADIANT DE L'INTERFACE D'INTRO
 RadialGradient boxRad = const RadialGradient(
   center: Alignment(0.003, -0.44),
-  radius: 0.66,
+  // radius: 0.66,
   colors: <Color>[Color(0xbc07051c), Color(0xff07051c)],
   stops: <double>[0, 0.507],
 );
@@ -45,13 +47,6 @@ LinearGradient floatingBtnGradient = const LinearGradient(
   colors: <Color>[Color(0xffbc8a1a), Color(0xd3ffdd92)],
   stops: <double>[0, 1],
 );
-
-// DIMENSIONS RELLES DE MAQUETTES FIGMA
-const mockupHeight = 812;
-const mockupWidth = 375;
-
-// ETAPES DES FORMULAIRES
-const steps = 5;
 
 // Les code couleurs
 
@@ -107,6 +102,13 @@ RadialGradient eggContainerGradient = const RadialGradient(
   ],
 );
 
+// DIMENSIONS RELLES DE MAQUETTES FIGMA
+const double mockupHeight = 812;
+const double mockupWidth = 375;
+
+// ETAPES DES FORMULAIRES
+const steps = 5;
+
 // Les Typographies de police et parametrages
 TextStyle makeTextStyleWith({
   String fontFamily = 'Outfit',
@@ -124,7 +126,7 @@ TextStyle makeTextStyleWith({
 }
 
 TextStyle boxOnBoringThemeFont = GoogleFonts.dosis(
-  fontSize: 24,
+  fontSize: 24.sp,
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.w600,
   color: Colors.white,
@@ -187,7 +189,7 @@ ThemeData boxAppThemeData = ThemeData(
       textColor: boxHintColor,
     ),
     labelMedium: makeTextStyleWith(
-      textfontSize: 22,
+      textfontSize: 15,
       textfontWeight: FontWeight.w700,
       textColor: boxdarknessBlack,
     ),
@@ -196,11 +198,11 @@ ThemeData boxAppThemeData = ThemeData(
       textfontWeight: FontWeight.w500,
     ),
     bodyMedium: makeTextStyleWith(
-      textfontSize: 24,
+      textfontSize: 18,
       textfontWeight: FontWeight.w600,
     ),
     bodyLarge: makeTextStyleWith(
-      textfontSize: 30,
+      textfontSize: 18,
       textfontWeight: FontWeight.w700,
     ),
   ),
