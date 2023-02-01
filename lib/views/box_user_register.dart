@@ -86,7 +86,7 @@ class _BoxUserRegisterState extends State<BoxUserRegister> {
                       style: makeTextStyleWith(
                         textfontSize: 15,
                         textfontWeight: FontWeight.w400,
-                        textColor: boxdarknessBlack,
+                        textColor: boxDarknessBlack,
                       ),
                       decoration: const InputDecoration(
                         hintText: "Entrez votre ID",
@@ -102,7 +102,7 @@ class _BoxUserRegisterState extends State<BoxUserRegister> {
                       style: makeTextStyleWith(
                         textfontSize: 15,
                         textfontWeight: FontWeight.w400,
-                        textColor: boxdarknessBlack,
+                        textColor: boxDarknessBlack,
                       ),
                     ),
                   ],
@@ -137,7 +137,7 @@ class _BoxUserRegisterState extends State<BoxUserRegister> {
                         style: makeTextStyleWith(
                           textfontSize: 22,
                           textfontWeight: FontWeight.w700,
-                          textColor: boxdarknessBlack,
+                          textColor: boxDarknessBlack,
                         ),
                       ),
                     ),

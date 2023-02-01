@@ -12,10 +12,12 @@ class BoxUserPassword extends StatelessWidget {
     super.key,
     required this.currentPageIndex,
     required this.nextFormHandler,
+    required this.prevFormHandle,
   });
 
   final int currentPageIndex;
   final Function nextFormHandler;
+  final Function prevFormHandle;
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +32,10 @@ class BoxUserPassword extends StatelessWidget {
         child: Column(
           children: [
             CustomAppBar(
-              textscaleFactor: 1,
+              textscaleFactor: textscaleFactor,
               label: 'Inscription',
-              haveBackBtn: true,
-              prevFormHandle: () {},
+              haveBackBtn: currentPageIndex > 0,
+              prevFormHandle: () => prevFormHandle(),
             ),
             Assets.images.boxLogoName.image(height: 150.h, scale: 2.1),
             Row(
@@ -47,7 +49,7 @@ class BoxUserPassword extends StatelessWidget {
                       isActive: index == currentPageIndex,
                       height: 10,
                       width: 29,
-                      customColor: boxdarknessBlack,
+                      customColor: boxDarknessBlack,
                     ),
                   ),
                 ),
@@ -67,7 +69,7 @@ class BoxUserPassword extends StatelessWidget {
                     style: makeTextStyleWith(
                       textfontSize: 15.sp,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                     decoration: const InputDecoration(
                       hintText: "Mot de passe",
@@ -88,7 +90,7 @@ class BoxUserPassword extends StatelessWidget {
                     style: makeTextStyleWith(
                       textfontSize: 15.sp,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                     decoration: const InputDecoration(
                       hintText: "Confirmer le mot de passe",
@@ -109,7 +111,11 @@ class BoxUserPassword extends StatelessWidget {
                     },
                     child: Text(
                       "Suivant",
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: makeTextStyleWith(
+                        textfontSize: 22.sp,
+                        textfontWeight: FontWeight.w700,
+                        textColor: boxDarknessBlack,
+                      ),
                     ),
                   ),
                 )

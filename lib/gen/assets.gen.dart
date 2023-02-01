@@ -14,6 +14,21 @@ import 'package:flutter/services.dart';
 class $AssetsDesignGen {
   const $AssetsDesignGen();
 
+  /// File path: assets/design/Intro-1.png
+  AssetGenImage get intro1 => const AssetGenImage('assets/design/Intro-1.png');
+
+  /// File path: assets/design/Intro-2.png
+  AssetGenImage get intro2 => const AssetGenImage('assets/design/Intro-2.png');
+
+  /// File path: assets/design/Intro-3.png
+  AssetGenImage get intro3 => const AssetGenImage('assets/design/Intro-3.png');
+
+  /// File path: assets/design/Intro-4.png
+  AssetGenImage get intro4 => const AssetGenImage('assets/design/Intro-4.png');
+
+  /// File path: assets/design/Intro-5.png
+  AssetGenImage get intro5 => const AssetGenImage('assets/design/Intro-5.png');
+
   /// File path: assets/design/interfaces1.png
   AssetGenImage get interfaces1 =>
       const AssetGenImage('assets/design/interfaces1.png');
@@ -21,6 +36,14 @@ class $AssetsDesignGen {
   /// File path: assets/design/interfaces10.png
   AssetGenImage get interfaces10 =>
       const AssetGenImage('assets/design/interfaces10.png');
+
+  /// File path: assets/design/interfaces11.png
+  AssetGenImage get interfaces11 =>
+      const AssetGenImage('assets/design/interfaces11.png');
+
+  /// File path: assets/design/interfaces12.png
+  AssetGenImage get interfaces12 =>
+      const AssetGenImage('assets/design/interfaces12.png');
 
   /// File path: assets/design/interfaces2.png
   AssetGenImage get interfaces2 =>
@@ -56,8 +79,15 @@ class $AssetsDesignGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        intro1,
+        intro2,
+        intro3,
+        intro4,
+        intro5,
         interfaces1,
         interfaces10,
+        interfaces11,
+        interfaces12,
         interfaces2,
         interfaces3,
         interfaces4,
@@ -87,9 +117,25 @@ class $AssetsImagesGen {
   AssetGenImage get boxLogoName =>
       const AssetGenImage('assets/images/box-logo-name.png');
 
+  /// File path: assets/images/box-logo-text-dark.png
+  AssetGenImage get boxLogoTextDark =>
+      const AssetGenImage('assets/images/box-logo-text-dark.png');
+
+  /// File path: assets/images/box-logo-text-primary.png
+  AssetGenImage get boxLogoTextPrimary =>
+      const AssetGenImage('assets/images/box-logo-text-primary.png');
+
+  /// File path: assets/images/box-logo-triangle.png
+  AssetGenImage get boxLogoTriangle =>
+      const AssetGenImage('assets/images/box-logo-triangle.png');
+
   /// File path: assets/images/box-logo.png
   AssetGenImage get boxLogo =>
       const AssetGenImage('assets/images/box-logo.png');
+
+  /// File path: assets/images/box-triangle-text.png
+  AssetGenImage get boxTriangleText =>
+      const AssetGenImage('assets/images/box-triangle-text.png');
 
   /// File path: assets/images/break-egg.png
   AssetGenImage get breakEgg =>
@@ -133,6 +179,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/oeuf.png
   AssetGenImage get oeuf => const AssetGenImage('assets/images/oeuf.png');
 
+  /// File path: assets/images/oval-motif.png
+  AssetGenImage get ovalMotif =>
+      const AssetGenImage('assets/images/oval-motif.png');
+
   /// File path: assets/images/planifier-epargne.png
   AssetGenImage get planifierEpargne =>
       const AssetGenImage('assets/images/planifier-epargne.png');
@@ -148,6 +198,10 @@ class $AssetsImagesGen {
   AssetGenImage get savingCuate =>
       const AssetGenImage('assets/images/saving-cuate.png');
 
+  /// File path: assets/images/side-oval-motif.png
+  AssetGenImage get sideOvalMotif =>
+      const AssetGenImage('assets/images/side-oval-motif.png');
+
   /// File path: assets/images/transac.png
   AssetGenImage get transac => const AssetGenImage('assets/images/transac.png');
 
@@ -160,7 +214,11 @@ class $AssetsImagesGen {
         boxAccountInit,
         boxEgg,
         boxLogoName,
+        boxLogoTextDark,
+        boxLogoTextPrimary,
+        boxLogoTriangle,
         boxLogo,
+        boxTriangleText,
         breakEgg,
         cadenas,
         circular,
@@ -173,10 +231,12 @@ class $AssetsImagesGen {
         momo,
         moov,
         oeuf,
+        ovalMotif,
         planifierEpargne,
         plate,
         recupEpargne,
         savingCuate,
+        sideOvalMotif,
         transac,
         zenBox
       ];

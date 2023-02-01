@@ -14,10 +14,12 @@ class BoxSexBirthday extends StatefulWidget {
     super.key,
     required this.currentPageIndex,
     required this.nextFormHandler,
+    required this.prevFormHandle,
   });
 
   final int currentPageIndex;
   final Function nextFormHandler;
+  final Function prevFormHandle;
 
   @override
   State<BoxSexBirthday> createState() => _BoxSexBirthdayState();
@@ -40,8 +42,8 @@ class _BoxSexBirthdayState extends State<BoxSexBirthday> {
             CustomAppBar(
               textscaleFactor: 1,
               label: 'Inscription',
-              haveBackBtn: true,
-              prevFormHandle: () {},
+              haveBackBtn: widget.currentPageIndex > 0,
+              prevFormHandle: () => widget.prevFormHandle(),
             ),
             Assets.images.boxLogoName.image(height: 150.h, scale: 2.1),
             Row(
@@ -55,7 +57,7 @@ class _BoxSexBirthdayState extends State<BoxSexBirthday> {
                       isActive: index == widget.currentPageIndex,
                       height: 10,
                       width: 29,
-                      customColor: boxdarknessBlack,
+                      customColor: boxDarknessBlack,
                     ),
                   ),
                 ),
@@ -69,12 +71,17 @@ class _BoxSexBirthdayState extends State<BoxSexBirthday> {
                   DropdownButtonFormField(
                     hint: const Text("Sexe"),
                     items: choicesSexeList,
-                    // validator: formConfig["sexe"]["rule"],
+                    validator: (selected) {
+                      if (selected == null) {
+                        return "Selectionner votre sexe";
+                      }
+                      return null;
+                    },
                     isDense: false,
                     style: makeTextStyleWith(
                       textfontSize: 15.sp,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                     decoration: InputDecoration(
                       alignLabelWithHint: true,
@@ -113,7 +120,7 @@ class _BoxSexBirthdayState extends State<BoxSexBirthday> {
                     style: makeTextStyleWith(
                       textfontSize: 15.sp,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                     decoration: const InputDecoration(
                       hintText: "Entrez votre date de naissance",
@@ -137,7 +144,11 @@ class _BoxSexBirthdayState extends State<BoxSexBirthday> {
                     },
                     child: Text(
                       "Suivant",
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: makeTextStyleWith(
+                        textfontSize: 22.sp,
+                        textfontWeight: FontWeight.w700,
+                        textColor: boxDarknessBlack,
+                      ),
                     ),
                   ),
                 )

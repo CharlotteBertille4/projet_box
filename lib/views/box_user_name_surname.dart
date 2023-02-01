@@ -13,10 +13,12 @@ class BoxUserNameSurname extends StatelessWidget {
     super.key,
     required this.currentPageIndex,
     required this.nextFormHandler,
+    required this.prevFormHandle,
   });
 
   final int currentPageIndex;
   final Function nextFormHandler;
+  final Function prevFormHandle;
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +35,8 @@ class BoxUserNameSurname extends StatelessWidget {
             CustomAppBar(
               textscaleFactor: 1,
               label: 'Inscription',
-              haveBackBtn: true,
-              prevFormHandle: () {},
+              haveBackBtn: currentPageIndex > 0,
+              prevFormHandle: () => prevFormHandle(),
             ),
             Assets.images.boxLogoName.image(height: 150.h, scale: 2.1),
             Row(
@@ -48,7 +50,7 @@ class BoxUserNameSurname extends StatelessWidget {
                       isActive: index == currentPageIndex,
                       height: 10,
                       width: 29,
-                      customColor: boxdarknessBlack,
+                      customColor: boxDarknessBlack,
                     ),
                   ),
                 ),
@@ -67,7 +69,7 @@ class BoxUserNameSurname extends StatelessWidget {
                     style: makeTextStyleWith(
                       textfontSize: 15,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                     decoration: const InputDecoration(
                       hintText: "Entrer votre nom",
@@ -81,7 +83,7 @@ class BoxUserNameSurname extends StatelessWidget {
                     style: makeTextStyleWith(
                       textfontSize: 15,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                     decoration: const InputDecoration(
                       hintText: "Entrer votre prénom",
@@ -105,7 +107,11 @@ class BoxUserNameSurname extends StatelessWidget {
                     child: Text(
                       "Suivant",
                       // textScaleFactor: textscaleFactor,
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: makeTextStyleWith(
+                        textfontSize: 22.sp,
+                        textfontWeight: FontWeight.w700,
+                        textColor: boxDarknessBlack,
+                      ),
                     ),
                   ),
                 )

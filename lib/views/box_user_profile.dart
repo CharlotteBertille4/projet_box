@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:projet_box/constants/helpers.dart';
 import 'package:projet_box/widgets/custom_clipper_path.dart';
 
@@ -16,6 +17,12 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
 
   @override
   void initState() {
+    // Ecran uniquement en portrait
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     automaticDeposit = true;
     automaticWithdraw = true;
     super.initState();
@@ -33,7 +40,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
             style: makeTextStyleWith(
               textfontSize: 18,
               textfontWeight: FontWeight.w600,
-              textColor: boxdarknessBlack,
+              textColor: boxDarknessBlack,
             ),
           ),
           content: Column(
@@ -44,7 +51,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 15,
                   textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
                 decoration: const InputDecoration(
                   hintText: "Nom & Prénoms",
@@ -56,7 +63,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 15,
                   textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
                 decoration: const InputDecoration(
                   hintText: "Numéro de télephone",
@@ -72,7 +79,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 18,
                   textfontWeight: FontWeight.w500,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
               ),
             ),
@@ -105,7 +112,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
             style: makeTextStyleWith(
               textfontSize: 18,
               textfontWeight: FontWeight.w600,
-              textColor: boxdarknessBlack,
+              textColor: boxDarknessBlack,
             ),
           ),
           content: Column(
@@ -116,7 +123,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 15,
                   textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
                 decoration: const InputDecoration(
                   hintText: "Entrer votre email",
@@ -132,7 +139,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 18,
                   textfontWeight: FontWeight.w500,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
               ),
             ),
@@ -165,7 +172,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
             style: makeTextStyleWith(
               textfontSize: 18,
               textfontWeight: FontWeight.w600,
-              textColor: boxdarknessBlack,
+              textColor: boxDarknessBlack,
             ),
           ),
           content: Column(
@@ -176,7 +183,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 15,
                   textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
                 decoration: const InputDecoration(
                   hintText: "Entrer l'ancien mot de passe",
@@ -188,7 +195,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 15,
                   textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
                 decoration: const InputDecoration(
                   hintText: "Entrer le nouveau mot de passe",
@@ -204,7 +211,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 18,
                   textfontWeight: FontWeight.w500,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
               ),
             ),
@@ -237,7 +244,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
             style: makeTextStyleWith(
               textfontSize: 18,
               textfontWeight: FontWeight.w600,
-              textColor: boxdarknessBlack,
+              textColor: boxDarknessBlack,
             ),
           ),
           content: Column(
@@ -248,7 +255,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 15,
                   textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
                 decoration: const InputDecoration(
                   hintText: "Entrer l'id de la carte d'identité",
@@ -264,7 +271,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 18,
                   textfontWeight: FontWeight.w500,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
               ),
             ),
@@ -297,7 +304,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
             style: makeTextStyleWith(
               textfontSize: 18,
               textfontWeight: FontWeight.w600,
-              textColor: boxdarknessBlack,
+              textColor: boxDarknessBlack,
             ),
           ),
           content: Column(
@@ -308,7 +315,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 15,
                   textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
                 decoration: const InputDecoration(
                   hintText: "Entrer votre mode de paiement",
@@ -324,7 +331,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 style: makeTextStyleWith(
                   textfontSize: 18,
                   textfontWeight: FontWeight.w500,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
               ),
             ),
@@ -505,7 +512,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 borderRadius: const BorderRadius.all(Radius.circular(20)),
                 boxShadow: [
                   BoxShadow(
-                    color: boxdarknessBlack.withOpacity(0.25),
+                    color: boxDarknessBlack.withOpacity(0.25),
                     blurRadius: 4.0,
                     offset: const Offset(0.0, 4.0),
                   ),
@@ -565,6 +572,7 @@ class _BoxUserProfileState extends State<BoxUserProfile> {
                 ],
               ),
             ),
+            const SizedBox(height: 30),
           ],
         ),
       ),

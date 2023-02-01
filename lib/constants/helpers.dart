@@ -54,7 +54,7 @@ Color motifColor = const Color(0xFFFFC600);
 const Color boxWhiteness = Color(0xFFFFFFFF);
 const Color boxGray = Color(0xFFF5F5F5);
 const Color boxHintColor = Color(0xFF6D6A6A);
-const Color boxdarknessBlack = Color(0xFF140E17);
+const Color boxDarknessBlack = Color(0xFF140E17);
 const Color boxtranslucideBlack = Color(0xFF464444);
 const Color boxLineSeparatorBack = Color(0xFF222222);
 const Color boxLineSeparatorGrey = Color(0xFF222222);
@@ -191,7 +191,7 @@ ThemeData boxAppThemeData = ThemeData(
     labelMedium: makeTextStyleWith(
       textfontSize: 15,
       textfontWeight: FontWeight.w700,
-      textColor: boxdarknessBlack,
+      textColor: boxDarknessBlack,
     ),
     bodySmall: makeTextStyleWith(
       textfontSize: 12,
@@ -279,29 +279,29 @@ List<DropdownMenuItem<String>> typeCaisse = [
 ];
 
 final List<BoxOnboardContent> boxOnboardContentData = [
-  const BoxOnboardContent(
-    image: 'assets/images/box-logo.png',
+  BoxOnboardContent(
+    image: Assets.images.boxTriangleText.path,
     description: 'BOX la caisse mobile',
   ),
-  const BoxOnboardContent(
-    image: 'assets/images/epargne-secu.png',
+  BoxOnboardContent(
+    image: Assets.images.epargneSecu.path,
     description: 'Épargnez de façon simple et sécurisée',
   ),
-  const BoxOnboardContent(
-    image: 'assets/images/demarrer-epargne.png',
+  BoxOnboardContent(
+    image: Assets.images.demarrerEpargne.path,
     description:
         'Créez une caisse mobile et démarrez une épargne à votre rythme',
   ),
-  const BoxOnboardContent(
-    image: 'assets/images/planifier-epargne.png',
+  BoxOnboardContent(
+    image: Assets.images.planifierEpargne.path,
     description: "Programmez la date et l'heure de fin de votre épargne",
   ),
-  const BoxOnboardContent(
-    image: 'assets/images/recup-epargne.png',
+  BoxOnboardContent(
+    image: Assets.images.recupEpargne.path,
     description: 'Rentrez en possession de vos épargne à la fin du délai',
   ),
-  const BoxOnboardContent(
-    image: 'assets/images/box-account-init.png',
+  BoxOnboardContent(
+    image: Assets.images.boxAccountInit.path,
     description:
         'Dépôt et retrait rapide et sécurisé via MTN MONEY et MOOV MONEY',
   )
@@ -369,9 +369,9 @@ Map formConfig = {
   // Form 3
   'sexe': {
     "controller": sexeController,
-    "rule": ValidationBuilder(
+    "rule": (ValidationBuilder(
       requiredMessage: "Renseigner votre sexe",
-    ).build()
+    ).build())
   },
   'dateNaissance': {
     "controller": birthdayController,

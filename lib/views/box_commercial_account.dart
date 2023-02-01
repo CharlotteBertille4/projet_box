@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:projet_box/constants/helpers.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:projet_box/widgets/box_affiliate_widget.dart';
@@ -11,6 +13,17 @@ class BoxCommercialAccount extends StatefulWidget {
 }
 
 class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
+  @override
+  void initState() {
+    // Ecran uniquement en portrait
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +47,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                       style: makeTextStyleWith(
                         textfontSize: 35,
                         textfontWeight: FontWeight.w600,
-                        textColor: boxdarknessBlack,
+                        textColor: boxDarknessBlack,
                       ),
                     ),
                     const SizedBox(height: 15),
@@ -62,7 +75,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                     borderRadius: const BorderRadius.all(Radius.circular(5)),
                     boxShadow: [
                       BoxShadow(
-                        color: boxdarknessBlack.withOpacity(0.25),
+                        color: boxDarknessBlack.withOpacity(0.25),
                         blurRadius: 4.0,
                         offset: const Offset(0.0, 3.0),
                       ),
@@ -70,14 +83,14 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                   ),
                   child: Center(
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
                           "Commission (Solde)",
                           style: makeTextStyleWith(
-                            textfontSize: 18,
+                            textfontSize: 18.sp,
                             textfontWeight: FontWeight.w600,
-                            textColor: boxdarknessBlack,
+                            textColor: boxDarknessBlack,
                           ),
                         ),
                         const VerticalDivider(
@@ -90,9 +103,9 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                           label: Text(
                             "1500 FCFA",
                             style: makeTextStyleWith(
-                              textfontSize: 18,
+                              textfontSize: 18.sp,
                               textfontWeight: FontWeight.w600,
-                              textColor: boxdarknessBlack,
+                              textColor: boxDarknessBlack,
                             ),
                           ),
                         )
@@ -113,9 +126,9 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
             Text(
               "Liens utiles",
               style: makeTextStyleWith(
-                textfontSize: 20,
+                textfontSize: 20.sp,
                 textfontWeight: FontWeight.w400,
-                textColor: boxdarknessBlack,
+                textColor: boxDarknessBlack,
               ),
             ),
             const SizedBox(height: 20),
@@ -131,23 +144,23 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                   backgroundColor: boxGoldenPrimary.withOpacity(0.1),
                   child: const Icon(
                     Icons.perm_identity_sharp,
-                    color: boxdarknessBlack,
+                    color: boxDarknessBlack,
                   ),
                 ),
                 title: Text(
                   "B7ULXV",
                   style: makeTextStyleWith(
-                    textfontSize: 18,
+                    textfontSize: 18.sp,
                     textfontWeight: FontWeight.w500,
-                    textColor: boxdarknessBlack,
+                    textColor: boxDarknessBlack,
                   ),
                 ),
                 subtitle: Text(
                   "Code de parainage",
                   style: makeTextStyleWith(
-                    textfontSize: 14,
+                    textfontSize: 14.sp,
                     textfontWeight: FontWeight.w400,
-                    textColor: boxdarknessBlack,
+                    textColor: boxDarknessBlack,
                   ),
                 ),
                 trailing: TextButton.icon(
@@ -156,9 +169,9 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                   label: Text(
                     "Copier",
                     style: makeTextStyleWith(
-                      textfontSize: 14,
+                      textfontSize: 14.sp,
                       textfontWeight: FontWeight.w500,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                   ),
                 ),
@@ -177,23 +190,23 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                   backgroundColor: boxGoldenPrimary.withOpacity(0.1),
                   child: const Icon(
                     Icons.link,
-                    color: boxdarknessBlack,
+                    color: boxDarknessBlack,
                   ),
                 ),
                 title: Text(
                   " - ",
                   style: makeTextStyleWith(
-                    textfontSize: 16,
+                    textfontSize: 16.sp,
                     textfontWeight: FontWeight.w500,
-                    textColor: boxdarknessBlack,
+                    textColor: boxDarknessBlack,
                   ),
                 ),
                 subtitle: Text(
                   "Lien de partage",
                   style: makeTextStyleWith(
-                    textfontSize: 14,
+                    textfontSize: 14.h,
                     textfontWeight: FontWeight.w400,
-                    textColor: boxdarknessBlack,
+                    textColor: boxDarknessBlack,
                   ),
                 ),
                 trailing: TextButton.icon(
@@ -202,9 +215,9 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                   label: Text(
                     "Partager",
                     style: makeTextStyleWith(
-                      textfontSize: 14,
+                      textfontSize: 14.sp,
                       textfontWeight: FontWeight.w500,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                   ),
                 ),
@@ -220,7 +233,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                 borderRadius: const BorderRadius.all(Radius.circular(5)),
                 boxShadow: [
                   BoxShadow(
-                    color: boxdarknessBlack.withOpacity(0.25),
+                    color: boxDarknessBlack.withOpacity(0.25),
                     blurRadius: 2.0,
                     offset: const Offset(0.0, 1.0),
                   ),
@@ -236,28 +249,28 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                     backgroundColor: boxGoldenPrimary.withOpacity(0.1),
                     child: const Icon(
                       Icons.person_add_sharp,
-                      color: boxdarknessBlack,
+                      color: boxDarknessBlack,
                     ),
                   ),
                   title: Text(
                     "Listes des parainnées",
                     style: makeTextStyleWith(
-                      textfontSize: 16,
+                      textfontSize: 16.sp,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                   ),
                   subtitle: Text(
                     "12 parainné(e)s",
                     style: makeTextStyleWith(
-                      textfontSize: 14,
+                      textfontSize: 14.sp,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                   ),
                   trailing: const Icon(
                     Icons.arrow_forward_ios_sharp,
-                    color: boxdarknessBlack,
+                    color: boxDarknessBlack,
                   ),
                 ),
               ),
@@ -281,7 +294,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                       style: makeTextStyleWith(
                         textfontSize: 18,
                         textfontWeight: FontWeight.w600,
-                        textColor: boxdarknessBlack,
+                        textColor: boxDarknessBlack,
                       ),
                     ),
                   ),
@@ -289,6 +302,7 @@ class _BoxCommercialAccountState extends State<BoxCommercialAccount> {
                 const Spacer(),
               ],
             ),
+            const SizedBox(height: 30),
           ],
         ),
       ),

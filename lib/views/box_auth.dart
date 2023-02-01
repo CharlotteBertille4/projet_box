@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:projet_box/constants/helpers.dart';
 import 'package:projet_box/gen/assets.gen.dart';
 import 'package:projet_box/screens/box_home.dart';
+import 'package:projet_box/widgets/box_custom_bar.dart';
 import 'package:projet_box/widgets/box_oval_motif_paint.dart';
 import 'package:projet_box/widgets/no_account.dart';
 
@@ -51,6 +52,17 @@ class _BoxAuthState extends State<BoxAuth> {
   }
 
   @override
+  void initState() {
+    // Ecran uniquement en portrait
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -60,48 +72,11 @@ class _BoxAuthState extends State<BoxAuth> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Connexion",
-                        style: GoogleFonts.outfit(
-                          fontSize: 24,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(height: 8.h),
-                      Text(
-                        "Bienvenue !",
-                        style: GoogleFonts.outfit(
-                          fontSize: 13,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                  TextButton.icon(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () => {},
-                    label: Text(
-                      "Retour",
-                      style: GoogleFonts.outfit(
-                        fontSize: 15,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ],
+              CustomAppBar(
+                textscaleFactor: 1,
+                label: 'Connexion',
+                haveBackBtn: false,
+                prevFormHandle: () {},
               ),
               Assets.images.boxLogoName.image(height: 150.h, scale: 2.1),
               Form(
@@ -112,7 +87,7 @@ class _BoxAuthState extends State<BoxAuth> {
                       style: makeTextStyleWith(
                         textfontSize: 15,
                         textfontWeight: FontWeight.w400,
-                        textColor: boxdarknessBlack,
+                        textColor: boxDarknessBlack,
                       ),
                       decoration: const InputDecoration(
                         hintText: "Entrez votre ID",
@@ -128,7 +103,7 @@ class _BoxAuthState extends State<BoxAuth> {
                       style: makeTextStyleWith(
                         textfontSize: 15,
                         textfontWeight: FontWeight.w400,
-                        textColor: boxdarknessBlack,
+                        textColor: boxDarknessBlack,
                       ),
                     ),
                   ],
@@ -163,7 +138,7 @@ class _BoxAuthState extends State<BoxAuth> {
                         style: makeTextStyleWith(
                           textfontSize: 22,
                           textfontWeight: FontWeight.w700,
-                          textColor: boxdarknessBlack,
+                          textColor: boxDarknessBlack,
                         ),
                       ),
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:projet_box/constants/helpers.dart';
 import 'package:projet_box/views/box_affiliate_confidentiality.dart';
@@ -25,6 +26,12 @@ class _BoxRegisterState extends State<BoxRegister> {
 
   @override
   void initState() {
+    // Ecran uniquement en portrait
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     _pageController = PageController(initialPage: pageIndex);
     super.initState();
   }
@@ -76,25 +83,25 @@ class _BoxRegisterState extends State<BoxRegister> {
         }),
         children: [
           BoxUserNameSurname(
-            currentPageIndex: pageIndex,
-            nextFormHandler: displayNextForm,
-          ),
+              currentPageIndex: pageIndex,
+              nextFormHandler: displayNextForm,
+              prevFormHandle: displayPrevForm),
           BoxNumberJob(
-            currentPageIndex: pageIndex,
-            nextFormHandler: displayNextForm,
-          ),
+              currentPageIndex: pageIndex,
+              nextFormHandler: displayNextForm,
+              prevFormHandle: displayPrevForm),
           BoxSexBirthday(
-            currentPageIndex: pageIndex,
-            nextFormHandler: displayNextForm,
-          ),
+              currentPageIndex: pageIndex,
+              nextFormHandler: displayNextForm,
+              prevFormHandle: displayPrevForm),
           BoxUserPassword(
-            currentPageIndex: pageIndex,
-            nextFormHandler: displayNextForm,
-          ),
+              currentPageIndex: pageIndex,
+              nextFormHandler: displayNextForm,
+              prevFormHandle: displayPrevForm),
           BoxAffilateConfidentiality(
-            currentPageIndex: pageIndex,
-            nextFormHandler: displayNextForm,
-          ),
+              currentPageIndex: pageIndex,
+              nextFormHandler: displayNextForm,
+              prevFormHandle: displayPrevForm),
         ],
       ),
     );

@@ -9,16 +9,23 @@ import 'package:projet_box/widgets/dot_indicator.dart';
 import 'package:projet_box/widgets/no_account.dart';
 //import 'package:intl_phone_field/intl_phone_field.dart';
 
-class BoxNumberJob extends StatelessWidget {
+class BoxNumberJob extends StatefulWidget {
   const BoxNumberJob({
     super.key,
     required this.currentPageIndex,
     required this.nextFormHandler,
+    required this.prevFormHandle,
   });
 
   final int currentPageIndex;
   final Function nextFormHandler;
+  final Function prevFormHandle;
 
+  @override
+  State<BoxNumberJob> createState() => _BoxNumberJobState();
+}
+
+class _BoxNumberJobState extends State<BoxNumberJob> {
   @override
   Widget build(BuildContext context) {
     // final deviceWith = MediaQuery.of(context).size.width;
@@ -34,8 +41,8 @@ class BoxNumberJob extends StatelessWidget {
             CustomAppBar(
               textscaleFactor: 1,
               label: 'Inscription',
-              haveBackBtn: true,
-              prevFormHandle: () {},
+              haveBackBtn: widget.currentPageIndex > 0,
+              prevFormHandle: () => widget.prevFormHandle(),
             ),
             Assets.images.boxLogoName.image(height: 150.h, scale: 2.1),
             Row(
@@ -46,10 +53,10 @@ class BoxNumberJob extends StatelessWidget {
                   (index) => Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: DotIndicator(
-                      isActive: index == currentPageIndex,
+                      isActive: index == widget.currentPageIndex,
                       height: 10,
                       width: 29,
-                      customColor: boxdarknessBlack,
+                      customColor: boxDarknessBlack,
                     ),
                   ),
                 ),
@@ -71,12 +78,12 @@ class BoxNumberJob extends StatelessWidget {
                     dropdownTextStyle: makeTextStyleWith(
                       textfontSize: 15.sp,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                     style: makeTextStyleWith(
                       textfontSize: 15.sp,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                     decoration: const InputDecoration(
                       hintText: "Numéro Momo ou Flooz",
@@ -89,7 +96,7 @@ class BoxNumberJob extends StatelessWidget {
                     style: makeTextStyleWith(
                       textfontSize: 15.sp,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                     decoration: const InputDecoration(
                       hintText: "Profession",
@@ -107,12 +114,16 @@ class BoxNumberJob extends StatelessWidget {
                       if (form_2.currentState!.validate())
                         {
                           //TODO: GESTION DU FORMULAIRE NIVEAU 2
-                          nextFormHandler(),
+                          widget.nextFormHandler(),
                         }
                     },
                     child: Text(
                       "Suivant",
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: makeTextStyleWith(
+                        textfontSize: 22.sp,
+                        textfontWeight: FontWeight.w700,
+                        textColor: boxDarknessBlack,
+                      ),
                     ),
                   ),
                 )

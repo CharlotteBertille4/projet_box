@@ -17,7 +17,7 @@ class _BoxSplashScreenState extends State<BoxSplashScreen> {
     return AnimatedSplashScreen(
       splash: Column(
         children: [
-          // Assets.images.boxLogoName.image(),
+          //  Assets.images.boxLogoTextDark.image(),
           Text(
             "BOX",
             style: makeTextStyleWith(

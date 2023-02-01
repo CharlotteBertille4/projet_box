@@ -105,7 +105,7 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                         borderRadius: BorderRadius.all(Radius.circular(20.r)),
                         boxShadow: [
                           BoxShadow(
-                            color: boxdarknessBlack.withOpacity(0.25),
+                            color: boxDarknessBlack.withOpacity(0.25),
                             blurRadius: 4.0,
                             offset: const Offset(0.0, 3.0),
                           ),
@@ -131,7 +131,7 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                                   children: const [
                                     Icon(
                                       Icons.calendar_month,
-                                      color: boxdarknessBlack,
+                                      color: boxDarknessBlack,
                                     )
                                   ],
                                 ),
@@ -147,7 +147,7 @@ class _BoxSavingBoardState extends State<BoxSavingBoard> {
                                     style: makeTextStyleWith(
                                       textfontSize: 18.sp,
                                       textfontWeight: FontWeight.w600,
-                                      textColor: boxdarknessBlack,
+                                      textColor: boxDarknessBlack,
                                     ),
                                   ),
                                 ),

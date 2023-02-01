@@ -13,10 +13,12 @@ class BoxAffilateConfidentiality extends StatefulWidget {
     super.key,
     required this.currentPageIndex,
     required this.nextFormHandler,
+    required this.prevFormHandle,
   });
 
   final int currentPageIndex;
   final Function nextFormHandler;
+  final Function prevFormHandle;
 
   @override
   State<BoxAffilateConfidentiality> createState() =>
@@ -26,10 +28,12 @@ class BoxAffilateConfidentiality extends StatefulWidget {
 class _BoxAffilateConfidentialityState
     extends State<BoxAffilateConfidentiality> {
   late bool? confidentialCondAccepted;
+  late bool confidentialCondIgnored;
 
   @override
   void initState() {
     confidentialCondAccepted = false;
+    confidentialCondIgnored = false;
     super.initState();
   }
 
@@ -41,35 +45,41 @@ class _BoxAffilateConfidentialityState
     // Accessoirement la fonction asynchrone d'authentification
     // Puis de redirection vers la page principale
     void loaderAndRedirect(context) async {
-      // Affiche un loader dans un AlertDialog
-      showDialog(
-        context: context,
-        barrierDismissible: false,
-        builder: (context) {
-          return AlertDialog(
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: const <Widget>[
-                CircularProgressIndicator(),
-                SizedBox(height: 20),
-                Text('Chargement en cours...'),
-              ],
-            ),
-          );
-        },
-      );
+      if (confidentialCondAccepted == false) {
+        setState(() {
+          confidentialCondIgnored == true;
+        });
+      } else {
+        // Affiche un loader dans un AlertDialog
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) {
+            return AlertDialog(
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: const <Widget>[
+                  CircularProgressIndicator(),
+                  SizedBox(height: 20),
+                  Text('Chargement en cours...'),
+                ],
+              ),
+            );
+          },
+        );
 
-      // Attend 10 secondes ou lance l'authentification
-      await Future.delayed(const Duration(seconds: 10)).then(
-        (value) => {
-          Navigator.of(context).pop(),
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-              builder: (context) => const BoxHome(),
-            ),
-          )
-        },
-      );
+        // Attend 10 secondes ou lance l'authentification
+        await Future.delayed(const Duration(seconds: 10)).then(
+          (value) => {
+            Navigator.of(context).pop(),
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) => const BoxHome(),
+              ),
+            )
+          },
+        );
+      }
     }
 
     return SingleChildScrollView(
@@ -82,8 +92,8 @@ class _BoxAffilateConfidentialityState
             CustomAppBar(
               textscaleFactor: 1,
               label: 'Inscription',
-              haveBackBtn: true,
-              prevFormHandle: () {},
+              haveBackBtn: widget.currentPageIndex > 0,
+              prevFormHandle: () => widget.prevFormHandle(),
             ),
             Assets.images.boxLogoName.image(height: 150.h, scale: 2.1),
             Row(
@@ -97,7 +107,7 @@ class _BoxAffilateConfidentialityState
                       isActive: index == widget.currentPageIndex,
                       height: 10,
                       width: 29,
-                      customColor: boxdarknessBlack,
+                      customColor: boxDarknessBlack,
                     ),
                   ),
                 ),
@@ -116,7 +126,7 @@ class _BoxAffilateConfidentialityState
                     style: makeTextStyleWith(
                       textfontSize: 15.sp,
                       textfontWeight: FontWeight.w400,
-                      textColor: boxdarknessBlack,
+                      textColor: boxDarknessBlack,
                     ),
                     decoration: const InputDecoration(
                       hintText: "Code de parrainage",
@@ -126,6 +136,7 @@ class _BoxAffilateConfidentialityState
                   Row(
                     children: [
                       Checkbox(
+                        isError: confidentialCondIgnored,
                         value: confidentialCondAccepted,
                         onChanged: (val) {
                           setState(
@@ -159,7 +170,11 @@ class _BoxAffilateConfidentialityState
                     onPressed: () => loaderAndRedirect(context),
                     child: Text(
                       "S'inscrire",
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: makeTextStyleWith(
+                        textfontSize: 22.sp,
+                        textfontWeight: FontWeight.w700,
+                        textColor: boxDarknessBlack,
+                      ),
                     ),
                   ),
                 )

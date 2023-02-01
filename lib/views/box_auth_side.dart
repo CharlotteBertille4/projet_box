@@ -4,10 +4,26 @@ import 'package:projet_box/constants/helpers.dart';
 import 'package:projet_box/views/box_auth.dart';
 import 'package:projet_box/views/box_register.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:projet_box/views/box_user_register.dart';
+import 'package:flutter/services.dart';
 
-class BoxAuthSide extends StatelessWidget {
+class BoxAuthSide extends StatefulWidget {
   const BoxAuthSide({super.key});
+
+  @override
+  State<BoxAuthSide> createState() => _BoxAuthSideState();
+}
+
+class _BoxAuthSideState extends State<BoxAuthSide> {
+  @override
+  void initState() {
+    // Ecran uniquement en portrait
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +57,10 @@ class BoxAuthSide extends StatelessWidget {
             Text(
               "BOX",
               textScaleFactor: textscaleFactor,
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: GoogleFonts.outfit(
+                fontSize: 30.sp,
+                fontWeight: FontWeight.w700,
+              ),
             ),
             SizedBox(height: 3.h),
             Container(
@@ -85,7 +104,7 @@ class BoxAuthSide extends StatelessWidget {
                       style: GoogleFonts.outfit(
                         fontSize: 22.sp,
                         fontWeight: FontWeight.w700,
-                        color: boxdarknessBlack,
+                        color: boxDarknessBlack,
                       ),
                     ),
                   ),
@@ -101,7 +120,7 @@ class BoxAuthSide extends StatelessWidget {
                       ),
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: boxdarknessBlack,
+                      backgroundColor: boxDarknessBlack,
                       fixedSize: Size.fromHeight(65.h),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
@@ -109,7 +128,7 @@ class BoxAuthSide extends StatelessWidget {
                           bottomRight: Radius.circular(15.r),
                         ),
                       ),
-                      // backgroundColor: boxdarknessBlack,
+                      // backgroundColor: boxDarknessBlack,
                       padding: EdgeInsets.symmetric(vertical: 19.h),
                     ),
                     child: Text(

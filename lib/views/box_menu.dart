@@ -132,7 +132,7 @@ class BoxMenu extends StatelessWidget {
                             const BorderRadius.all(Radius.circular(10)),
                         boxShadow: [
                           BoxShadow(
-                            color: boxdarknessBlack.withOpacity(0.25),
+                            color: boxDarknessBlack.withOpacity(0.25),
                             blurRadius: 4.0,
                             offset: const Offset(0.0, 4.0),
                           ),

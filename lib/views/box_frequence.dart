@@ -64,7 +64,7 @@ class _BoxFrequenceState extends State<BoxFrequence> {
                               textfontWeight: FontWeight.w500,
                               textColor: selectedFrequenceIndex == index
                                   ? boxGoldenPrimary
-                                  : boxdarknessBlack,
+                                  : boxDarknessBlack,
                             ),
                           ),
                         );
@@ -99,7 +99,7 @@ class _BoxFrequenceState extends State<BoxFrequence> {
                                 textfontWeight: FontWeight.w500,
                                 textColor: selectedHourIndex == index
                                     ? boxGoldenPrimary
-                                    : boxdarknessBlack,
+                                    : boxDarknessBlack,
                               ),
                             ),
                           );
@@ -135,7 +135,7 @@ class _BoxFrequenceState extends State<BoxFrequence> {
                                 textfontWeight: FontWeight.w500,
                                 textColor: selectedMinutesIndex == index
                                     ? boxGoldenPrimary
-                                    : boxdarknessBlack,
+                                    : boxDarknessBlack,
                               ),
                             ),
                           );
@@ -159,7 +159,7 @@ class _BoxFrequenceState extends State<BoxFrequence> {
                 borderRadius: const BorderRadius.all(Radius.circular(20)),
                 boxShadow: [
                   BoxShadow(
-                    color: boxdarknessBlack.withOpacity(0.25),
+                    color: boxDarknessBlack.withOpacity(0.25),
                     blurRadius: 4.0,
                     offset: const Offset(0.0, 4.0),
                   ),
@@ -211,7 +211,7 @@ class _BoxFrequenceState extends State<BoxFrequence> {
                       style: makeTextStyleWith(
                         textfontSize: 20,
                         textfontWeight: FontWeight.w600,
-                        textColor: boxdarknessBlack,
+                        textColor: boxDarknessBlack,
                       ),
                     ),
                   ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:projet_box/constants/helpers.dart';
@@ -101,7 +102,7 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                 style: makeTextStyleWith(
                   textfontSize: 15,
                   textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
                 decoration: const InputDecoration(
                   hintText: "Intitulé",
@@ -125,7 +126,7 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                 style: makeTextStyleWith(
                   textfontSize: 15,
                   textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
                 onChanged: ((value) {
                   debugPrint(value.toString());
@@ -152,7 +153,7 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                 style: makeTextStyleWith(
                   textfontSize: 15,
                   textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
               ),
               const SizedBox(height: 15),
@@ -164,7 +165,7 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                 style: makeTextStyleWith(
                   textfontSize: 15,
                   textfontWeight: FontWeight.w400,
-                  textColor: boxdarknessBlack,
+                  textColor: boxDarknessBlack,
                 ),
               ),
               const SizedBox(height: 20),
@@ -179,7 +180,7 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                   borderRadius: const BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
                     BoxShadow(
-                      color: boxdarknessBlack.withOpacity(0.25),
+                      color: boxDarknessBlack.withOpacity(0.25),
                       blurRadius: 4.0,
                       offset: const Offset(0.0, 4.0),
                     ),
@@ -206,7 +207,7 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                             style: makeTextStyleWith(
                               textfontSize: 16,
                               textfontWeight: FontWeight.w400,
-                              textColor: boxdarknessBlack,
+                              textColor: boxDarknessBlack,
                             ),
                             decoration: const InputDecoration(
                               filled: true,
@@ -246,7 +247,7 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                           setBoxDate(startBoxDateCont, "Début de la caisse"),
                       validator: formConfig["dateNaissance"]["rule"],
                       style: GoogleFonts.abel(
-                        color: boxdarknessBlack,
+                        color: boxDarknessBlack,
                         fontSize: 18,
                       ),
                       decoration: InputDecoration(
@@ -289,7 +290,7 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                       textAlign: TextAlign.justify,
                       textAlignVertical: TextAlignVertical.bottom,
                       style: GoogleFonts.abel(
-                        color: boxdarknessBlack,
+                        color: boxDarknessBlack,
                         fontSize: 18,
                       ),
                       decoration: InputDecoration(
@@ -317,7 +318,7 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                         icon: Text(
                           "Fin       ",
                           style: makeTextStyleWith(
-                            textfontSize: 18,
+                            textfontSize: 18.sp,
                             textfontWeight: FontWeight.w500,
                           ),
                         ),
@@ -369,9 +370,9 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                       child: Text(
                         "Creer ma caisse",
                         style: makeTextStyleWith(
-                          textfontSize: 20,
+                          textfontSize: 20.sp,
                           textfontWeight: FontWeight.w600,
-                          textColor: boxdarknessBlack,
+                          textColor: boxDarknessBlack,
                         ),
                       ),
                     ),
@@ -379,6 +380,7 @@ class _BoxCreateInterfaceState extends State<BoxCreateInterface> {
                   const Spacer(),
                 ],
               ),
+              const SizedBox(height: 30),
             ],
           ),
         ),

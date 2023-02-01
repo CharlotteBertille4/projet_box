@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:projet_box/constants/helpers.dart';
 import 'package:projet_box/views/box_auth.dart';
-import 'package:projet_box/views/box_login.dart';
 import 'package:projet_box/views/box_register.dart';
 
 class NoAccount extends StatelessWidget {
@@ -49,7 +48,7 @@ class NoAccount extends StatelessWidget {
             style: makeTextStyleWith(
               textfontSize: 13,
               textfontWeight: FontWeight.w700,
-              textColor: boxdarknessBlack,
+              textColor: boxDarknessBlack,
             ),
           ),
         )
